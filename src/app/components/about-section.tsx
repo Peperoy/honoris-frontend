@@ -1,5 +1,5 @@
 import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 
 export function AboutSection() {
   const ref = useRef(null);
@@ -19,7 +19,7 @@ export function AboutSection() {
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <motion.img
-                  src="https://images.unsplash.com/photo-1694452243736-2b9c00d001b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwbHV4dXJ5JTIwY2xvdGhpbmclMjBzdG9yZXxlbnwxfHx8fDE3NzA2NDc4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="/images/about.jpg"
                   alt="Intérieur boutique"
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.05 }}

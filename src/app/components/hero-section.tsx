@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import React from 'react';
 
 export function HeroSection() {
   return (
@@ -14,7 +15,7 @@ export function HeroSection() {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1765009433753-c7462637d21f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBmYXNoaW9uJTIwYm91dGlxdWUlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NzA1NjIzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          src="/images/hero.jpg"
           alt="Boutique Honoris Cosa"
           className="w-full h-full object-cover"
         />

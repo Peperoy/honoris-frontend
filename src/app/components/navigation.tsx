@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export function Navigation() {
@@ -34,7 +34,7 @@ export function Navigation() {
             className="text-2xl tracking-[0.3em] font-light"
             style={{ color: isScrolled ? '#000' : '#fff' }}
           >
-            HONORIS COSA
+            HONORIS<span className="font-bold">COSA.</span>
           </button>
 
           {/* Desktop Navigation */}
