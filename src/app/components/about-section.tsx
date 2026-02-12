@@ -27,7 +27,8 @@ export function AboutSection() {
                 />
               </div>
               <motion.div 
-                className="absolute -bottom-6 -right-6 w-32 h-32 border border-amber-400/30"
+                className="absolute -bottom-6 -right-6 w-32 h-32 border"
+                style={{ borderColor: 'rgba(222, 192, 129, 0.3)' }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -42,7 +43,8 @@ export function AboutSection() {
             >
               <div className="mb-6">
                 <motion.span 
-                  className="text-xs tracking-[0.3em] text-amber-600"
+                  className="font-montserrat-alt text-xs tracking-[0.3em]"
+                  style={{ color: '#dec081' }}
                   initial={{ opacity: 0 }}
                   animate={isInView ? { opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 }}
@@ -50,19 +52,20 @@ export function AboutSection() {
                   À PROPOS
                 </motion.span>
                 <motion.div 
-                  className="h-px w-16 bg-amber-400 mt-4"
+                  className="h-px w-16 mt-4"
+                  style={{ backgroundColor: '#dec081' }}
                   initial={{ width: 0 }}
                   animate={isInView ? { width: 64 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 ></motion.div>
               </div>
               <motion.h2 
-                className="text-4xl md:text-5xl tracking-[0.1em] font-light mb-6"
+                className="font-montserrat-alt text-4xl md:text-5xl tracking-[0.1em] font-light mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                L'Excellence Incarnée
+                La Boutique
               </motion.h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <motion.p

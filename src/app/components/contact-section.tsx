@@ -17,12 +17,12 @@ export function ContactSection() {
     {
       icon: Phone,
       title: 'TÉLÉPHONE',
-      content: ['+33 1 23 45 67 89', '+33 6 12 34 56 78']
+      content: ['+33 3 27 41 16 72']
     },
     {
       icon: Clock,
       title: 'HORAIRES',
-      content: ['Lun - Sam: 10h - 19h', 'Dimanche: Fermé']
+      content: ['Lundi: 14h - 19h', 'Mar - Sam: 9h30 - 12h30, 14h - 19h · Dimanche: Fermé']
     }
   ];
 
@@ -43,7 +43,7 @@ export function ContactSection() {
           {/* Header */}
           <div className="text-center mb-16">
             <motion.span 
-              className="text-xs tracking-[0.3em]"
+              className="font-montserrat-alt text-xs tracking-[0.3em]"
               style={{ color: '#dec081' }}
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
@@ -59,7 +59,7 @@ export function ContactSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             ></motion.div>
             <motion.h2 
-              className="text-4xl md:text-5xl tracking-[0.1em] font-light mt-6 mb-4"
+              className="font-montserrat-alt text-4xl md:text-5xl tracking-[0.1em] font-light mt-6 mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -210,22 +210,29 @@ export function ContactSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 1 }}
           >
-            <h3 className="text-3xl tracking-[0.3em] font-light mb-4">HONORIS COSA</h3>
+            <h3 className="font-montserrat-alt text-3xl tracking-[-0.03em] font-light mb-4">HONORIS<span className="font-bold">COSA.</span></h3>
             <p className="text-gray-400 text-sm mb-8">
-              L'excellence à votre portée
+              La boutique mode de référence à Valenciennes
             </p>
-            <div className="flex justify-center gap-8">
-              {['INSTAGRAM', 'FACEBOOK', 'LINKEDIN'].map((social, index) => (
-                <motion.button
-                  key={social}
+            <div className="flex justify-center gap-8 flex-wrap">
+              {[
+                { label: 'INSTAGRAM', href: 'https://www.instagram.com/honoriscosa.store/' },
+                { label: 'FACEBOOK', href: 'https://www.facebook.com/honoriscosastore?locale=fr_FR' },
+                { label: 'GOOGLE', href: 'https://www.google.com/maps/place/Honoriscosa/@50.358227,3.5261014,15z/data=!4m6!3m5!1s0x0:0xdfb8bdf867dd3d5b!8m2!3d50.358227!4d3.5261014!16s%2Fg%2F11b7v8qx9q?entry=ttu' },
+              ].map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm tracking-[0.2em] text-gray-400 transition-colors hover:text-[#dec081]"
                   initial={{ opacity: 0, y: 10 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 1.2 + index * 0.1 }}
                   whileHover={{ scale: 1.1 }}
                 >
-                  {social}
-                </motion.button>
+                  {social.label}
+                </motion.a>
               ))}
             </div>
           </motion.div>

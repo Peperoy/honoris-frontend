@@ -1,1 +1,7 @@
-/* Custom fonts - add @font-face rules here if needed */
+/* Montserrat Alternates - Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;700&display=swap');
+
+/* Classe pour le logo HONORISCOSA. (light + bold) */
+.font-montserrat-alt {
+  font-family: "Montserrat Alternates", sans-serif;
+}

@@ -25,18 +25,19 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-6">
         <motion.div 
-          className="mb-4 h-px w-24 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto"
+          className="mb-4 h-px w-24 mx-auto"
+          style={{ background: 'linear-gradient(to right, transparent, #dec081, transparent)' }}
           initial={{ width: 0, opacity: 0 }}
           animate={{ width: 96, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         ></motion.div>
         <motion.h1 
-          className="text-5xl md:text-7xl lg:text-8xl tracking-[0.3em] font-light mb-6"
+          className="font-montserrat-alt text-5xl md:text-7xl lg:text-8xl tracking-[-0.03em] font-light mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          HONORIS COSA
+          HONORIS<span className="font-bold">COSA.</span>
         </motion.h1>
         <motion.p 
           className="text-lg md:text-xl tracking-[0.3em] font-light mb-8 opacity-90"
@@ -44,10 +45,11 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          L'EXCELLENCE À VOTRE PORTÉE
+          La boutique mode de référence à Valenciennes
         </motion.p>
         <motion.div 
-          className="h-px w-24 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto"
+          className="h-px w-24 mx-auto"
+          style={{ background: 'linear-gradient(to right, transparent, #dec081, transparent)' }}
           initial={{ width: 0, opacity: 0 }}
           animate={{ width: 96, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}

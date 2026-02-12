@@ -25,8 +25,33 @@ interface Brand {
   longDescription?: BrandLongDescription;
 }
 
-const PLACEHOLDER_IMAGE = 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1080&q=80';
 const SHOP_ADDRESS_URL = 'https://www.google.com/maps/search/?api=1&query=44+avenue+amsterdam+59300+valenciennes';
+
+// Images thématiques par marque (Unsplash, libres d'utilisation)
+const BRAND_IMAGES: Record<string, string> = {
+  'talking-wall': 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=1080&q=80', // écharpe
+  'roberto-collina': 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80', // maille / pull (même thème que Montagut)
+  'siyu': 'https://images.unsplash.com/photo-1616348490852-d80c545b4f79?w=1080&q=80', // mode féminine
+  'blonde-8': 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=1080&q=80', // parka / manteau
+  'rrd': 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=1080&q=80', // sportswear
+  'la-bruket': 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1080&q=80', // soins / cosmétiques
+  'ugg': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1080&q=80', // chaussures / bottes
+  'philippe-model': 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1080&q=80', // chaussures
+  'ibeliv': 'https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=1080&q=80', // artisanat / accessoires
+  'yves-salomon': 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1080&q=80', // fourrure / manteau
+  'bella-dahl': 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1080&q=80', // mode femme
+  'montagut': 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80', // maille
+  '5-octobre': 'https://images.unsplash.com/photo-1549439602-43ebca2327af?w=1080&q=80', // bijoux
+  'barbara-bui': 'https://images.unsplash.com/photo-1591884807235-1dc6c2e148b1?w=1080&q=80', // cuir / rock
+  'forte-forte': 'https://images.unsplash.com/photo-1613909671501-f9678ffc1d33?w=1080&q=80', // mode minimaliste
+  'vanessa-bruno': 'https://images.unsplash.com/photo-1589363460779-cd717d2ed8fa?w=1080&q=80', // sac / cabas
+  'faliero-sarti': 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1080&q=80', // écharpe cachemire
+  'jerome-dreyfuss': 'https://images.unsplash.com/photo-1589363358751-ab05797e5629?w=1080&q=80', // sac cuir
+  'masons': 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=1080&q=80', // style militaire / casual
+  'seven': 'https://images.unsplash.com/photo-1591884807235-1dc6c2e148b1?w=1080&q=80', // denim / casual
+  'rails': 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=1080&q=80', // chemise / casual
+  'majestic-filatures': 'https://images.unsplash.com/photo-1613909671501-f9678ffc1d33?w=1080&q=80', // mode / t-shirt luxe
+};
 
 // Images partagées pour les descriptions (entre les paragraphes)
 const DESC_IMG = 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1080&q=80';
@@ -207,28 +232,28 @@ const longDescriptions: Record<string, BrandLongDescription> = {
 };
 
 const brands: Brand[] = [
-  { id: 'talking-wall', name: 'talking wall', description: "Dans chaque coin, dans chaque rue à travers le monde, nous voyons les messages.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['talking-wall'] },
-  { id: 'roberto-collina', name: 'Roberto Collina', description: "Plus de 60 ans d'excellence Made in Italy… Roberto Collina crée et fabrique toutes ses collections à base de mailles.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['roberto-collina'] },
-  { id: 'siyu', name: 'SIYU', description: "Née il y a dix ans à Valence en Espagne, la marque est liée de près au côté artisanal du design.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['siyu'] },
-  { id: 'blonde-8', name: 'Blonde n°8', description: "Connue pour des vêtements d'extérieur de haute qualité, Blonde n°8 propose sa pièce phare : la parka.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['blonde-8'] },
-  { id: 'rrd', name: 'RRD', description: "RRD, ou Roberto Ricci Designs, une référence dans le monde du kitesurf puis du prêt-à-porter made in Italy.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['rrd'] },
-  { id: 'la-bruket', name: 'L:A BRUKET', description: "Fabriqués sur la côte ouest de Suède, les produits L:A BRUKET sont fabriqués avec des produits naturels et biologiques.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['la-bruket'] },
-  { id: 'ugg', name: 'UGG', description: "La maison UGG est créée en 1978 en Californie, symbole de la culture décontractée californienne.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['ugg'] },
-  { id: 'philippe-model', name: 'Philippe Model', description: "Philippe Model crée pour Claude Montana, Jean Paul Gaultier, Issey Miyake. En 1981, il fonde sa propre marque.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['philippe-model'] },
-  { id: 'ibeliv', name: 'ibeliv', description: "IBELIV est une marque engagée créée par Liv, alliant artisanat malgache et chic parisien.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['ibeliv'] },
-  { id: 'yves-salomon', name: 'Yves Salomon', description: "Passionné par la matière, Yves Salomon a repris les rênes de la maison familiale en 1972.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['yves-salomon'] },
-  { id: 'bella-dahl', name: 'Bella Dahl', description: "Bella Dahl propose des vêtements doux et élégants pour un style de vie moderne.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['bella-dahl'] },
-  { id: 'montagut', name: 'Montagut', description: "La Maison Montagut est une marque de vêtements en maille créée en 1880.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['montagut'] },
-  { id: '5-octobre', name: '5 Octobre', description: "La passion de Sophie Pfeffer pour les bijoux et les gemmes. En 2004, elle lance sa première collection.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['5-octobre'] },
-  { id: 'barbara-bui', name: 'Barbara Bui', description: "Barbara Bui est une marque française de prêt-à-porter de luxe féminin créée en 1987.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['barbara-bui'] },
-  { id: 'forte-forte', name: 'Forte Forte', description: "L'histoire de Forte Forte débute en 2002 par une petite collection de t-shirts peaufinée à la main.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['forte-forte'] },
-  { id: 'vanessa-bruno', name: 'Vanessa Bruno', description: "Parisienne par excellence, Vanessa Bruno crée en 1996 une marque à son nom.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['vanessa-bruno'] },
-  { id: 'faliero-sarti', name: 'Faliero Sarti', description: "L'histoire de Faliero Sarti commence en 1948, lorsque Faliero crée sa propre filature près de Florence.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['faliero-sarti'] },
-  { id: 'jerome-dreyfuss', name: 'Jérôme Dreyfuss', description: "Jérôme Dreyfuss lance en 1998 sa collection « Couture à Porter » et en 2002 « Roots de luxe ».", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['jerome-dreyfuss'] },
-  { id: 'masons', name: "Mason's", description: "Mason's est une maison de mode italienne créée en 1974 dans la région de la Ligurie.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['masons'] },
-  { id: 'seven', name: 'Seven', description: "Seven est une marque de denim premium conçue en Californie.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['seven'] },
-  { id: 'rails', name: 'Rails', description: "Fondée à Los Angeles en 2009, Rails est rapidement devenu une marque de style de vie mondiale.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['rails'] },
-  { id: 'majestic-filatures', name: 'Majestic Filatures', description: "En 1989, Franck Ellia et Roland Chelly lancent une marque autour d'une pièce basique : le t-shirt de luxe.", image: PLACEHOLDER_IMAGE, origin: 'Valenciennes', products: [], longDescription: longDescriptions['majestic-filatures'] },
+  { id: 'talking-wall', name: 'talking wall', description: "Dans chaque coin, dans chaque rue à travers le monde, nous voyons les messages.", image: BRAND_IMAGES['talking-wall'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['talking-wall'] },
+  { id: 'roberto-collina', name: 'Roberto Collina', description: "Plus de 60 ans d'excellence Made in Italy… Roberto Collina crée et fabrique toutes ses collections à base de mailles.", image: BRAND_IMAGES['roberto-collina'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['roberto-collina'] },
+  { id: 'siyu', name: 'SIYU', description: "Née il y a dix ans à Valence en Espagne, la marque est liée de près au côté artisanal du design.", image: BRAND_IMAGES['siyu'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['siyu'] },
+  { id: 'blonde-8', name: 'Blonde n°8', description: "Connue pour des vêtements d'extérieur de haute qualité, Blonde n°8 propose sa pièce phare : la parka.", image: BRAND_IMAGES['blonde-8'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['blonde-8'] },
+  { id: 'rrd', name: 'RRD', description: "RRD, ou Roberto Ricci Designs, une référence dans le monde du kitesurf puis du prêt-à-porter made in Italy.", image: BRAND_IMAGES['rrd'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['rrd'] },
+  { id: 'la-bruket', name: 'L:A BRUKET', description: "Fabriqués sur la côte ouest de Suède, les produits L:A BRUKET sont fabriqués avec des produits naturels et biologiques.", image: BRAND_IMAGES['la-bruket'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['la-bruket'] },
+  { id: 'ugg', name: 'UGG', description: "La maison UGG est créée en 1978 en Californie, symbole de la culture décontractée californienne.", image: BRAND_IMAGES['ugg'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['ugg'] },
+  { id: 'philippe-model', name: 'Philippe Model', description: "Philippe Model crée pour Claude Montana, Jean Paul Gaultier, Issey Miyake. En 1981, il fonde sa propre marque.", image: BRAND_IMAGES['philippe-model'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['philippe-model'] },
+  { id: 'ibeliv', name: 'ibeliv', description: "IBELIV est une marque engagée créée par Liv, alliant artisanat malgache et chic parisien.", image: BRAND_IMAGES['ibeliv'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['ibeliv'] },
+  { id: 'yves-salomon', name: 'Yves Salomon', description: "Passionné par la matière, Yves Salomon a repris les rênes de la maison familiale en 1972.", image: BRAND_IMAGES['yves-salomon'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['yves-salomon'] },
+  { id: 'bella-dahl', name: 'Bella Dahl', description: "Bella Dahl propose des vêtements doux et élégants pour un style de vie moderne.", image: BRAND_IMAGES['bella-dahl'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['bella-dahl'] },
+  { id: 'montagut', name: 'Montagut', description: "La Maison Montagut est une marque de vêtements en maille créée en 1880.", image: BRAND_IMAGES['montagut'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['montagut'] },
+  { id: '5-octobre', name: '5 Octobre', description: "La passion de Sophie Pfeffer pour les bijoux et les gemmes. En 2004, elle lance sa première collection.", image: BRAND_IMAGES['5-octobre'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['5-octobre'] },
+  { id: 'barbara-bui', name: 'Barbara Bui', description: "Barbara Bui est une marque française de prêt-à-porter de luxe féminin créée en 1987.", image: BRAND_IMAGES['barbara-bui'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['barbara-bui'] },
+  { id: 'forte-forte', name: 'Forte Forte', description: "L'histoire de Forte Forte débute en 2002 par une petite collection de t-shirts peaufinée à la main.", image: BRAND_IMAGES['forte-forte'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['forte-forte'] },
+  { id: 'vanessa-bruno', name: 'Vanessa Bruno', description: "Parisienne par excellence, Vanessa Bruno crée en 1996 une marque à son nom.", image: BRAND_IMAGES['vanessa-bruno'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['vanessa-bruno'] },
+  { id: 'faliero-sarti', name: 'Faliero Sarti', description: "L'histoire de Faliero Sarti commence en 1948, lorsque Faliero crée sa propre filature près de Florence.", image: BRAND_IMAGES['faliero-sarti'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['faliero-sarti'] },
+  { id: 'jerome-dreyfuss', name: 'Jérôme Dreyfuss', description: "Jérôme Dreyfuss lance en 1998 sa collection « Couture à Porter » et en 2002 « Roots de luxe ».", image: BRAND_IMAGES['jerome-dreyfuss'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['jerome-dreyfuss'] },
+  { id: 'masons', name: "Mason's", description: "Mason's est une maison de mode italienne créée en 1974 dans la région de la Ligurie.", image: BRAND_IMAGES['masons'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['masons'] },
+  { id: 'seven', name: 'Seven', description: "Seven est une marque de denim premium conçue en Californie.", image: BRAND_IMAGES['seven'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['seven'] },
+  { id: 'rails', name: 'Rails', description: "Fondée à Los Angeles en 2009, Rails est rapidement devenu une marque de style de vie mondiale.", image: BRAND_IMAGES['rails'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['rails'] },
+  { id: 'majestic-filatures', name: 'Majestic Filatures', description: "En 1989, Franck Ellia et Roland Chelly lancent une marque autour d'une pièce basique : le t-shirt de luxe.", image: BRAND_IMAGES['majestic-filatures'], origin: 'Valenciennes', products: [], longDescription: longDescriptions['majestic-filatures'] },
 ];
 
 const INITIAL_COUNT = 6;
@@ -248,7 +273,7 @@ export function BrandsSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.span 
-            className="text-xs tracking-[0.3em] text-amber-600"
+            className="font-montserrat-alt text-xs tracking-[0.3em] text-[#dec081]"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
@@ -256,18 +281,18 @@ export function BrandsSection() {
             NOS MARQUES
           </motion.span>
           <motion.div 
-            className="h-px w-16 bg-amber-400 mt-4 mx-auto"
+            className="h-px w-16 mt-4 mx-auto bg-[#dec081]"
             initial={{ width: 0 }}
             animate={isInView ? { width: 64 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           ></motion.div>
           <motion.h2 
-            className="text-4xl md:text-5xl tracking-[0.1em] font-light mt-6 mb-4"
+            className="font-montserrat-alt text-4xl md:text-5xl tracking-[0.1em] font-light mt-6 mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Nos Marques
+            La Sélection
           </motion.h2>
           <motion.p 
             className="text-gray-600 max-w-2xl mx-auto"
@@ -322,7 +347,7 @@ export function BrandsSection() {
           >
             <button
               onClick={() => setShowAllBrands(true)}
-              className="group px-8 py-4 border-2 border-amber-600 text-amber-600 tracking-[0.2em] text-sm font-light transition-all duration-300 hover:bg-amber-600 hover:text-white flex items-center gap-2"
+              className="group px-8 py-4 border-2 border-[#dec081] text-[#dec081] tracking-[0.2em] text-sm font-light transition-all duration-300 hover:bg-[#dec081] hover:text-white flex items-center gap-2"
             >
               Voir plus
               <ChevronDown size={18} className="transition-transform group-hover:translate-y-0.5" />
@@ -357,13 +382,13 @@ export function BrandsSection() {
                 </div>
                 <div className="p-8 md:p-12 flex flex-col justify-center">
                   <div className="mb-6">
-                    <span className="text-xs tracking-[0.3em] text-amber-600">MARQUE</span>
-                    <div className="h-px w-16 bg-amber-400 mt-4"></div>
+                    <span className="text-xs tracking-[0.3em] text-[#dec081]">MARQUE</span>
+                    <div className="h-px w-16 bg-[#dec081] mt-4"></div>
                   </div>
                   <h3 className="text-4xl tracking-[0.2em] font-light mb-4">
                     {selectedBrand.name}
                   </h3>
-                  <p className="text-sm text-amber-600 tracking-[0.2em] mb-6">
+                  <p className="text-sm text-[#dec081] tracking-[0.2em] mb-6">
                     {selectedBrand.origin}
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-8">
@@ -406,7 +431,7 @@ export function BrandsSection() {
                           />
                         </div>
                         <div className="space-y-1">
-                          <p className="text-xs text-amber-600 tracking-[0.2em]">{product.category}</p>
+                          <p className="text-xs text-[#dec081] tracking-[0.2em]">{product.category}</p>
                           <h5 className="font-light">{product.name}</h5>
                           <p className="text-sm text-gray-600">{product.price}</p>
                         </div>
@@ -449,7 +474,7 @@ export function BrandsSection() {
                       href={SHOP_ADDRESS_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-amber-600 underline underline-offset-2 hover:text-amber-700"
+                      className="text-[#dec081] underline underline-offset-2 hover:text-[#c9ad6e]"
                     >
                       44 Avenue d&apos;Amsterdam à Valenciennes
                     </a>
@@ -460,7 +485,7 @@ export function BrandsSection() {
                         setSelectedBrand(null);
                         setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100);
                       }}
-                      className="text-amber-600 underline underline-offset-2 hover:text-amber-700"
+                      className="text-[#dec081] underline underline-offset-2 hover:text-[#c9ad6e]"
                     >
                       Contactez-nous
                     </a>

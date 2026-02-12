@@ -31,7 +31,7 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-2xl tracking-[0.3em] font-light"
+            className="font-montserrat-alt text-2xl tracking-[-0.03em] font-light"
             style={{ color: isScrolled ? '#000' : '#fff' }}
           >
             HONORIS<span className="font-bold">COSA.</span>
@@ -43,7 +43,7 @@ export function Navigation() {
               <button
                 key={item}
                 onClick={() => scrollToSection(['about', 'brands', 'contact'][index])}
-                className="text-sm tracking-[0.2em] transition-all duration-300 hover:opacity-60"
+                className="font-montserrat-alt text-sm tracking-[0.2em] transition-all duration-300 hover:opacity-60"
                 style={{ color: isScrolled ? '#000' : '#fff' }}
               >
                 {item.toUpperCase()}
@@ -69,7 +69,7 @@ export function Navigation() {
                 <button
                   key={item}
                   onClick={() => scrollToSection(['about', 'brands', 'contact'][index])}
-                  className="text-sm tracking-[0.2em] text-black transition-all duration-300 hover:opacity-60"
+                  className="font-montserrat-alt text-sm tracking-[0.2em] text-black transition-all duration-300 hover:opacity-60"
                 >
                   {item.toUpperCase()}
                 </button>
