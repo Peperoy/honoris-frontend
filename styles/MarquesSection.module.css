@@ -1,0 +1,153 @@
+.section {
+  padding: 8rem 2rem 5rem;
+  background: var(--color-surface);
+  text-align: center;
+  overflow-x: clip;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 10rem 2rem 6rem;
+  }
+}
+
+.inner {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.kicker {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-widest-editorial);
+  color: var(--color-or);
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+.h2 {
+  font-family: var(--font-headline), "DM Serif Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: var(--color-encre);
+  margin-bottom: 6rem;
+}
+
+/* Même rendu que SiteHeader (nav) : bg + blur — plein bord sans 100vw */
+.marqueeWrap {
+  overflow: hidden;
+  width: calc(100% + 4rem);
+  max-width: none;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: 5rem;
+  background: color-mix(in srgb, var(--color-encre) 95%, transparent);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 1rem 0;
+}
+
+@supports (backdrop-filter: blur(24px)) {
+  .marqueeWrap {
+    background: color-mix(in srgb, var(--color-encre) 88%, transparent);
+  }
+}
+
+@media (min-width: 768px) {
+  .marqueeWrap {
+    padding: 1.15rem 0;
+  }
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marquee 85s linear infinite;
+}
+
+.marqueeContent {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marqueeItem {
+  font-size: clamp(1.35rem, 2.6vw, 2.2rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-lin);
+  white-space: nowrap;
+  padding: 0 2rem;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack {
+    animation: none;
+  }
+}
+
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem 3rem;
+}
+
+@media (min-width: 768px) {
+  .brandGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.brandBtn {
+  text-align: center;
+}
+
+.brandLabel {
+  font-size: clamp(12px, 1.5vw, 14px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: color-mix(in srgb, var(--color-encre) 60%, transparent);
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.brandBtn:hover .brandLabel {
+  color: var(--color-or);
+}
+
+.outlineBtn {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-or);
+  border: 1px solid color-mix(in srgb, var(--color-or) 30%, transparent);
+  padding: 1.25rem 3rem;
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+}
+
+.outlineBtn:hover {
+  background: var(--color-or);
+  color: var(--color-lin);
+}
+
+.footnote {
+  margin-top: 4rem;
+  font-size: 10px;
+  font-style: italic;
+  color: var(--color-secondary);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-widest-editorial);
+}

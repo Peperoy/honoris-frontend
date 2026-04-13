@@ -1,0 +1,212 @@
+.section {
+  background: var(--color-lin);
+  padding: 5rem 2rem 8rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 6rem 10rem;
+  }
+}
+
+.inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 6rem;
+  }
+}
+
+.left {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.kicker {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-widest-editorial);
+  color: var(--color-or);
+  display: block;
+}
+
+.h2 {
+  font-family: var(--font-headline), "DM Serif Display", serif;
+  font-size: clamp(3rem, 5vw, 3.75rem);
+  font-weight: 700;
+  color: var(--color-encre);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-weight: 300;
+  color: var(--color-encre);
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.rowLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 9px;
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary);
+  opacity: 0.6;
+}
+
+.rowValue {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.insta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+.instaLine {
+  width: 4rem;
+  height: 1px;
+  background: var(--color-or);
+  transition: width 0.7s ease;
+}
+
+.insta:hover .instaLine {
+  width: 6rem;
+}
+
+.instaText {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--color-encre);
+}
+
+.formCard {
+  min-width: 0;
+  overflow-wrap: break-word;
+  background: var(--color-surface);
+  padding: 3rem;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.03);
+  border: 1px solid color-mix(in srgb, var(--color-encre) 5%, transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .formCard {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .formCard {
+    padding: 5rem;
+  }
+}
+
+.formBlob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8rem;
+  height: 8rem;
+  background: color-mix(in srgb, var(--color-or) 5%, transparent);
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+  pointer-events: none;
+}
+
+.formTitle {
+  font-family: var(--font-headline), "DM Serif Display", serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-secondary);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-encre) 10%, transparent);
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--color-encre);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-bottom-color: var(--color-or);
+}
+
+.textarea {
+  resize: none;
+  min-height: 6rem;
+}
+
+.submit {
+  width: 100%;
+  background: var(--color-encre);
+  color: var(--color-lin);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  padding: 1.5rem;
+  transition: background 0.5s ease;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.submit:hover {
+  background: var(--color-or);
+}
