@@ -33,278 +33,431 @@ export type BrandLongDescription = {
   images: string[];
 };
 
-/** Images thématiques par marque (Unsplash). */
+/**
+ * Images hero par marque — Unsplash, thématiques et cohérentes avec l'univers de chaque maison.
+ * Format : https://images.unsplash.com/photo-<ID>?w=1080&q=80
+ */
 export const BRAND_IMAGES: Record<BrandSlug, string> = {
+  // Maille italienne fine — pull femme texturé fond neutre
   "roberto-collina":
-    "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
+    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1080&q=80",
+  // Parka outdoor premium — manteau femme sur fond hivernal
   "blonde-8":
-    "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=1080&q=80",
-  rrd: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=1080&q=80",
+    "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=1080&q=80",
+  // Sportswear nautique — vêtement technique bord de mer
+  rrd: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1080&q=80",
+  // Soins naturels — flacons minimalistes bois et pierre
   "la-bruket":
     "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1080&q=80",
+  // Sneakers / chaussures mode — détail semelle et cuir
   "philippe-model":
-    "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1080&q=80",
+    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1080&q=80",
+  // Accessoires raphia artisanat — sac naturel texturé
   ibeliv:
-    "https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=1080&q=80",
+    "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1080&q=80",
+  // Mode féminine fluide — robe legere femme lumière naturelle
   "bella-dahl":
-    "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1080&q=80",
+    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+  // Tricot polo maille — pull col roulé élégant
   montagut:
     "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
+  // Bijoux fins — bague or pierres fines sur fond sombre
   "5-octobre":
-    "https://images.unsplash.com/photo-1549439602-43ebca2327af?w=1080&q=80",
+    "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1080&q=80",
+  // Mode artisanale italienne — robe femme tissu délicat
   "forte-forte":
-    "https://images.unsplash.com/photo-1613909671501-f9678ffc1d33?w=1080&q=80",
+    "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1080&q=80",
+  // Sac cabas parisien — toile et paillettes lifestyle
   "vanessa-bruno":
-    "https://images.unsplash.com/photo-1589363460779-cd717d2ed8fa?w=1080&q=80",
+    "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1080&q=80",
+  // Écharpe cachemire — foulard texturé drapé
   "faliero-sarti":
-    "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1080&q=80",
+    "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=1080&q=80",
+  // Maroquinerie artisanale — sac cuir souple détail couture
   "jerome-dreyfuss":
-    "https://images.unsplash.com/photo-1589363358751-ab05797e5629?w=1080&q=80",
+    "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=1080&q=80",
+  // Pantalon militaire chic — treillis élégant coupe droite
   masons:
     "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=1080&q=80",
+  // Denim premium — jean brut détail tissu indigo
   seven:
-    "https://images.unsplash.com/photo-1591884807235-1dc6c2e148b1?w=1080&q=80",
+    "https://images.unsplash.com/photo-1542272604-787c3835535d?w=1080&q=80",
+  // T-shirt luxe blanc — basique premium fond épuré
   "majestic-filatures":
-    "https://images.unsplash.com/photo-1613909671501-f9678ffc1d33?w=1080&q=80",
+    "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1080&q=80",
+  // Esprit rock bohème — femme vêtement vintage texturé
   newtone:
-    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1080&q=80",
+    "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=1080&q=80",
+  // Cachemire doux — pull moelleux ton neutre lumière chaude
   "absolut-cachemere":
     "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=1080&q=80",
+  // Élégance féminine contemporaine — silhouette femme lumière dorée
   "bella-jones":
     "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1080&q=80",
+  // Casual chic scandinave — tenue décontractée lumière naturelle
   "laid-back":
-    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+    "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=1080&q=80",
+  // Mode italienne imprimée — tissu fluide coloré motif
   momoni:
     "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=1080&q=80",
+  // Créateur féminin artisanal — pièce unique atelier
   "lou-andrea":
     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1080&q=80",
+  // Chapeau artisanal — bob ou chapeau feutre détail finition
   "claris-virot":
-    "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1080&q=80",
+    "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=1080&q=80",
+  // Mode parisienne romantique — robe légère imprimée fleur
   soeur:
     "https://images.unsplash.com/photo-1585914924626-15adac1e6402?w=1080&q=80",
+  // Plage balnéaire — maillot de bain sable bleu mer
   "ct-plage":
     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1080&q=80",
+  // Minimalisme couleur — tenue ton sur ton neutre épuré
   tonal:
-    "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=1080&q=80",
+    "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1080&q=80",
+  // Urbain new-yorkais — style downtown femme city chic
   bowery:
     "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1080&q=80",
+  // Femme moderne affirmée — portrait mode lumière directe
   "la-nouvelle":
     "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1080&q=80",
 };
 
-const DESC_IMG =
-  "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1080&q=80";
-const DESC_IMG2 =
-  "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1080&q=80";
-
 export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
   "roberto-collina": {
     paragraphs: [
-      "Plus de 60 ans d'excellence Made in Italy… Roberto Collina crée et fabrique toutes ses collections à base de mailles depuis plusieurs décennies maintenant. Aujourd'hui, plus que jamais, il célèbre la qualité d'un vêtement réussi. Roberto met l'accent sur le processus de production, qui a écrit et continue d'écrire une partie importante de l'histoire du prêt à porter italien.",
-      "De Bologne au Japon, une marque familiale mondiale qui continue de marquer l'histoire du prêt à porter italien… Cette marque qui a débuté avec un petit atelier de tricotage est aujourd'hui renommée mondialement pour la qualité de ses pulls. Avec un véritable équilibre entre tradition et modernité, Roberto Collina résume son caractère au travers de ses collections. La maison suit une beauté sophistiquée et sensible lors de l'élaboration de ses produits, qui se traduit par une position élégante, élevant la simplicité à un état de pureté. Leur maître mot : réduire le luxe à l'essentiel. Le coeur de cette entreprise se trouve dans un héritage de fabrication et un savoir faire historique du design sur lequel se greffe un sens innovant de l'esthétique, qui met l'accent sur la qualité de la production. Derrière chaque vêtement se cache une longue période de recherche et de réalisation, de la production à l'élaboration des collections.",
+      "Depuis plus de 70 ans, Roberto Collina incarne l'excellence de la maille italienne. Fondée près de Bologne, cette maison familiale a élevé le tricot au rang des beaux-arts, en réduisant le luxe à l'essentiel : matière, coupe, savoir-faire.",
+      "L'histoire commence dans les années 1950, dans un petit atelier de Crevalcore, au cœur du district de la maille italienne. C'est le fils fondateur, Roberto, qui donne son nom à la maison dans les années 1980 en présentant 33 pulls homme à Pitti Uomo — un début remarqué qui lance la marque sur la scène internationale. Depuis, les fils les plus nobles se succèdent : cachemire, mohair, alpaca, mérinos, soie.",
+      "Chez Honoris Cosa, les pièces Roberto Collina sont sélectionnées pour leur capacité à traverser les saisons sans jamais vieillir. Chaque silhouette traduit un équilibre rare entre tradition artisanale et modernité créative — une garde-robe de caractère, pensée pour durer.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=1080&q=80",
+    ],
   },
+
   "blonde-8": {
     paragraphs: [
-      "Connue pour des vêtements d'extérieur de haute qualité, et à la mode, Blonde n°8 propose sa pièce phare : la parka. Grâce à l'engouement engendré pour ces dernières, la marque est rapidement devenue incontournable et elle s'est imposée dans le monde de la mode.",
-      "L'accent est mis sur le développement des styles à haute valeur. Avec une attention particulière pour les détails : une doublure intérieure spéciale, des fermetures à glissière de haute qualité ou des coutures contrastées qui rendent les vêtements spéciaux.",
-      "Blonde n°8 accorde une grande importance aux techniques de fabrication traditionnelles et à la production équitable. La durabilité et l'environnement jouent un rôle majeur dans la production, le transport et l'utilisation des matériaux.",
+      "Blonde n°8 s'est imposée comme la référence incontournable de l'outerwear féminin haut de gamme. Sa parka iconique, pensée jusque dans ses moindres détails, a conquis les femmes qui refusent de choisir entre style et protection.",
+      "La marque construit chaque pièce autour d'une philosophie exigeante : doublures techniques, fermetures éclair premium, coutures contrastées, matières durables. Loin de la fast fashion, Blonde n°8 s'inscrit dans une démarche de production responsable, attentive à l'impact environnemental et à la qualité des savoir-faire mobilisés.",
+      "En boutique chez Honoris Cosa, les collections Blonde n°8 proposent des pièces d'extérieur que l'on garde saison après saison — des manteaux à la fois fonctionnels et désirables, qui accompagnent avec élégance les femmes actives dans leur quotidien.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=1080&q=80",
+      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=1080&q=80",
+    ],
   },
+
   rrd: {
     paragraphs: [
-      "RRD, ou Roberto Ricci Designs, commence à se faire connaître dans l'univers du kitesurf. La marque propose alors différents équipements pour la discipline et devient vite une référence dans le monde entier. Après s'être faite connaitre, ils décident de créer une ligne de vêtements en 1995. La marque s'élargit rapidement, et propose désormais toutes sortes de pièces ne respectant qu'un seul mot d'ordre : la qualité made in Italy.",
-      "Roberto Ricci Designs ouvre son premier magasin mono marques à Forte dei Marmi. Plus tard, le showroom est inauguré au coeur du quartier de la mode et du design à Milan. La surface de 500 mètres carrés accueille de nombreux événements pour présenter les collections au monde entier. Un second showroom ouvre à Rome pour présenter le savoir faire italien au différents acteurs de la mode et du design à travers l'Italie.",
+      "RRD — Roberto Ricci Designs — est née de la passion d'un homme pour la mer et les sports nautiques. Ce qui a commencé comme une référence dans l'univers du kitesurf s'est mué en une maison de mode italienne complète, animée par une seule exigence : la qualité Made in Italy.",
+      "En 1995, la marque étend son savoir-faire technique à une ligne vestimentaire complète. En 2005, Roberto Ricci ouvre son premier flagship à Forte dei Marmi, puis un showroom de 500 m² dans le quartier de la mode à Milan. Chaque collection emprunte au monde du nautisme sa rigueur fonctionnelle pour l'appliquer à des vêtements urbains et de villégiature.",
+      "Chez Honoris Cosa, RRD représente cet équilibre entre performance et élégance décontractée — des pièces techniques aux coupes soignées qui se portent aussi bien en bord de mer qu'en ville, dans la plus pure tradition italienne.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1080&q=80",
+      "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=1080&q=80",
+    ],
   },
+
   "la-bruket": {
     paragraphs: [
-      "Fabriqués sur la côte ouest de Suède, les produits L:A BRUKET sont fabriqués avec des produits naturels et biologiques. La marque cherche son inspiration dans la nature qui l'entoure. Le Soleil, le vent, les rochers, la glace, le sable, la boue, l'eau… Les éléments affectent l'équilibre subtil de notre corps, mais peuvent aussi le rétablir.",
-      "L:A BRUKET a vu le jour dans la petite ville de Varberg, une station thermale bicentenaire. Leur héritage fort leur permet d'apporter une expertise dans la confections de leurs soins. Pour la marque, il est inconcevable de faire des concessions sur la pureté des ingrédients.",
-      "Tous les produits sont conçus pour nourrir, protéger et préserver l'épiderme sur le long terme. Ils sont travaillés avec un état d'esprit moderne appliqué à des techniques ancestrales de thérapie de la mer. Ce ne sont pas des solutions éphémères mais des formules destinées à une routine quotidienne de soins de la peau. L:A BRUKET propose une routine de soin complète pour le corps, le visage, les cheveux… Tous les produits sont complémentaires et élaborés avec minutie pour offrir les meilleures vertus possibles.",
+      "L:A BRUKET puise son essence dans la nature sauvage de la côte ouest suédoise. Soleil, vent, roche, eau salée : les éléments qui sculptent les paysages de Varberg inspirent chaque formule, dans un dialogue permanent entre la mer et l'épiderme.",
+      "Fondée dans cette station thermale bicentenaire, la marque hérite d'un savoir-faire ancestral en soins marins qu'elle réinterprète avec un état d'esprit contemporain. Tous les ingrédients sont naturels et biologiques, sélectionnés sans compromis sur la pureté. Les produits ne sont pas des solutions éphémères : ils s'intègrent dans une routine quotidienne pensée pour nourrir et préserver la peau sur le long terme.",
+      "Honoris Cosa a sélectionné L:A BRUKET pour offrir une parenthèse de soin nordique — des rituels complets pour le corps, le visage et les cheveux, présentés dans des flacons au design épuré qui trouvent naturellement leur place dans une salle de bain d'exception.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1080&q=80",
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1080&q=80",
+    ],
   },
+
   "philippe-model": {
     paragraphs: [
-      "Âgé d'à peine 20 ans, Philippe Model crée pour le grand couturier Claude Montana, ainsi que pour Jean Paul Gaultier, Issey Miyake et Thierry Mugler. Fort d'une grande maitrise et d'un excellent savoir-faire, il est vite devenu le chapelier des stars et des comtesses. Quelques années plus tard, en 1981, Philippe Model décide de fonder sa propre marque.",
-      "Les créations de Philippe Model représentent le mariage parfait entre la créativité et l'artisanat. Ses pièces dévoilent un héritage parisien mêlé à un savoir-faire italien, qui lui ont valu le prix de meilleur artisan de France en 1981. Au début des années 80, il crée sa toute première chaussure iconique : l'élastique. Devenu le symbole d'une féminité moderne, cette chaussure anticipe le concept révolutionnaire du confort des futures sneakers.",
-      "Quelques années plus tard, le succès de Philippe Model atteint ses plus vastes dimensions. Certaines de ses créations sont intégrées dans les collections du Metropolitan Museum de New York, de la National Gallery of Australia et d'autres musées importants. Philippe Model, profondément passionné par l'art, est toujours à la recherche de nouveaux défis. Il s'exprime sur de nombreux supports, qu'il s'agisse d'accessoires ou de murs, et se renouvelle au travers d'impressions et de décorations uniques et incomparables.",
+      "Philippe Model est l'histoire d'un talent précoce devenu une icône. À tout juste 20 ans, il crée pour Claude Montana, Jean Paul Gaultier et Issey Miyake, s'imposant comme le chapelier des stars avant de fonder sa propre maison en 1981 — l'année même où il décroche le titre de Meilleur Artisan de France.",
+      "C'est au début des années 80 qu'il imagine l'« élastique », sa première chaussure iconique : une silhouette qui anticipe de dix ans le concept du sneaker confortable et stylé. Depuis, la marque allie héritage parisien et savoir-faire artisanal italien, créant des pièces qui intègrent les collections de musées à travers le monde, du Metropolitan Museum de New York à la National Gallery of Australia.",
+      "En boutique chez Honoris Cosa, Philippe Model incarne la chaussure de caractère — celle que l'on reconnaît au premier regard, portée par des femmes qui assument leur singularité avec élégance et une pointe d'avant-garde.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1080&q=80",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1080&q=80",
+    ],
   },
+
   ibeliv: {
     paragraphs: [
-      "IBELIV est une marque engagée créée par Ramanandraibe Liva, surnommé Liv. Originaire de Madagascar, Liv arrive en France à 16 ans pour poursuive ses études d'expert comptable. Il y découvre l'héritage d'une élégance raffinée intemporelle, les codes du luxe et du design qui le passionnent depuis l'enfance.",
-      "Une fois son diplôme décroché, Liv souhaite vivre pleinement de ses passions et décide de créer sa marque IBELIV. Il est convaincu que notre consommation peut être plus responsable humainement et écologiquement. Que nous pouvons veiller à produire en respectant l'Homme et la Nature, tout en proposant des produits parfaitement adaptés à l'ère du temps. Ce sont sur ces valeurs que s'appuie IBELIV.",
-      "L'histoire commence à Madagascar où la mère de Liv cherche à promouvoir l'ancien savoir-faire autour des créations en raphia. Souhaitant mettre en avant cet art de chez lui, Liv crée de nombreux accessoires qui allient artisanat et chic. La marque travaille avec des artisans qui allient maitrise et savoir-faire autour du raphia. La production est réalisée en quantité raisonnée comme facteur du maintien de cet état d'esprit. Face à une époque où tout s'accélère, IBELIV prend le temps nécessaire à la réalisation de produits empreints d'une âme et résultant d'un véritable savoir-faire.",
+      "IBELIV est une marque engagée, fondée par Ramanandraibe Liva — dit Liv — originaire de Madagascar. À 16 ans, il arrive en France et découvre les codes du luxe et du design. Une fois diplômé, il choisit de vivre pleinement de ses passions et crée IBELIV, convaincu qu'une consommation plus responsable est possible sans sacrifier l'élégance.",
+      "L'histoire prend racine à Madagascar, où la mère de Liv perpétue l'art ancestral du raphia. Pour mettre en lumière ce savoir-faire, Liv conçoit des accessoires qui marient artisanat traditionnel et chic contemporain. Chaque pièce est produite en quantité raisonnée, en collaboration avec des artisans locaux qui maîtrisent ce matériau précieux depuis des générations.",
+      "Chez Honoris Cosa, IBELIV représente la preuve que la mode peut être belle, authentique et respectueuse — des accessoires chargés d'une âme véritable, qui racontent une histoire et honorent une terre.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=1080&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1080&q=80",
+    ],
   },
+
   "bella-dahl": {
     paragraphs: [
-      "Bella Dahl est une marque de mode féminine qui propose des vêtements doux et élégants pour un style de vie moderne. Les collections allient confort et esthétique contemporaine, avec des pièces soignées pour le quotidien.",
-      "La marque met en avant des matières agréables et des coupes contemporaines, pour une garde-robe chic et décontractée. Retrouvez les créations Bella Dahl en boutique.",
+      "Bella Dahl est née en Californie avec une idée simple et radicale : créer des vêtements si doux et si bien coupés qu'on ne veut plus les enlever. La marque a construit sa réputation sur des matières d'une légèreté exceptionnelle et des finitions qui transforment chaque basique en pièce désirable.",
+      "Les collections mêlent fluidité des silhouettes, palettes apaisantes et coupes contemporaines pensées pour une femme active. Du jean au blouse, chaque pièce Bella Dahl est conçue pour s'intégrer naturellement dans une garde-robe déjà riche, en y apportant douceur et décontraction raffinée.",
+      "En boutique chez Honoris Cosa, Bella Dahl représente l'élégance sans effort — ces pièces que l'on attrape instinctivement le matin parce qu'elles promettent confort et style pour toute une journée.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1080&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+    ],
   },
+
   montagut: {
     paragraphs: [
-      "La Maison Montagut est une marque de vêtements en maille créée en 1880. Aujourd'hui, l'entreprise familiale est gérée par la sixième génération : Nicolas Gros et Marine Lozet-Gros. Nicolas et Marine ajoutent leur touche de modernité et d'émotion à cet héritage familial. Ils souhaitent renouveler le spécialiste de la maille.",
-      "A son commencement, la Maison Montagut était une simple usine de soie près de Saint-Sauveur-de-Montagut, en Ardèche. Cette usine s'est réorientée vers le tricotage de maille après la guerre, à commencer par des pulls et des polos. La Maison Montagut est, depuis 1880, experte du tricot. Elle perpétue de générations en générations son savoir-faire ancestral.",
-      "Aujourd'hui, la Maison Montagut se renouvelle et se revendique expert en maille. En élargissant son offre autour de nombreux produits, elle montre son savoir-faire et sa maitrise du tricotage. La marque Pôles, petite nouvelle de la Maison, propose des pulls pour les femmes définies par un esprit de liberté et de féminité. Destinée aux femmes avec une fibre artistique et un certain art du voyage, Pôles habille les femmes lubies et voyageuses, audacieuses, créatives, qui affectionnent les produits aux belles matières et aux coupes déstructurées.",
+      "Depuis 1880, la Maison Montagut perpétue l'art du tricot avec une constance qui force le respect. Six générations de la même famille ont transmis leur passion du fil et de la maille, ancrant la marque au cœur de l'Ardèche, dans un héritage industriel et artisanal unique en France.",
+      "Née comme filature de soie près de Saint-Sauveur-de-Montagut, la maison s'est réorientée vers la maille après-guerre, maîtrisant progressivement toutes les techniques du tricotage fin. Aujourd'hui, Nicolas Gros et Marine Lozet-Gros, héritiers de la sixième génération, insufflent modernité et émotion à ce patrimoine, en élargissant l'offre tout en restant fidèles à leur savoir-faire fondateur.",
+      "Chez Honoris Cosa, Montagut incarne le tricot d'exception — des polos, pulls et pièces en maille d'une finesse rare, portés par des femmes et des hommes qui savent reconnaître la qualité au premier toucher.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1080&q=80",
+    ],
   },
+
   "5-octobre": {
     paragraphs: [
-      "La passion de Sophie Pfeffer pour les bijoux, les gemmes et les accessoires remonte à l'enfance. Elle collectionne les perles vintage et les parures anciennes. En 2004, Sophie réalise son rêve et lance sa première collection. Ses bijoux sont conçus avec un large faisceau d'influences diverses l'ayant bercée depuis sa jeunesse.",
-      "Les collections 5 Octobre reposent sur l'association de la matière brute et raffinée, le tout concentré autour des pièces qui représentent la pièce centrale des différentes compositions. L'assemblage est minimaliste. Chaque bijou est conçu comme un grigri, une sorte de talisman des temps modernes, destiné à protéger son propriétaire.",
-      "Les bijoux sont fabriqués de façon artisanale dans les ateliers de Sophie, où l'on travaille l'or fin, l'argent et le vermeil, associés aux diamants et pierres fines. Chaque bijou a fait l'objet d'un travail manuel extrêmement minutieux. Les pièces sont composées de pierres fines, taillées ou brutes, ce qui donne à chacune son caractère si particulier.",
+      "5 Octobre est une histoire de passion née dès l'enfance. Sophie Pfeffer collectionnait les perles vintage et les parures anciennes bien avant de lancer sa première collection en 2004. Aujourd'hui, ses bijoux sont des talismans des temps modernes — des pièces artisanales qui protègent et embellissent celles qui les portent.",
+      "Chaque création naît d'un assemblage minutieux entre matière brute et raffinement : l'or fin, l'argent, le vermeil et les diamants côtoient des pierres fines taillées ou brutes, choisies pour leur caractère unique. Le travail est entièrement manuel, réalisé dans les ateliers de Sophie où chaque bijou est traité comme une pièce unique.",
+      "En boutique chez Honoris Cosa, 5 Octobre propose une sélection de bijoux à l'esthétique minimaliste et puissante — des pièces que l'on porte seules ou que l'on accumule, et qui deviennent rapidement indissociables de celles qui les choisissent.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1080&q=80",
+      "https://images.unsplash.com/photo-1549439602-43ebca2327af?w=1080&q=80",
+    ],
   },
+
   "forte-forte": {
     paragraphs: [
-      "L'histoire de Forte Forte débute en 2002 par une petite collection de t-shirts peaufinée à la main. Un frère et soeur, héritiers d'un savoir-faire familial, qui imaginent des pièces dans leurs chambres d'enfants, face au jardin où ils ont grandi.",
-      "Ils gardent un grand souci du détail qui caractérise la production artisanale malgré l'échelle industrielle de production. Forte Forte cultive le rapport au temps, et souhaite que son entreprise murisse lentement. Cette réflexion pondérée les amène à travailler sur leurs pièces de façon plus personnel, loin du monde très évolutif de la mode, pour créer des pièces intemporelles.",
-      "Forte Forte porte des valeurs pures, essentielles, sincères, pleines d'émotions. Des pièces intemporelles qui révèlent une liberté sans limites, où le passé et le présent fusionnent harmonieusement leurs âmes. La collection Forte Forte évolue au fil des années. Elle offre aujourd'hui une proposition complète qui met en avant la matière tout en respectant son caractère, la couleur et les formes pures, afin d'épouser le corps sans le contraindre.",
+      "Forte Forte naît en 2002 d'une collection de t-shirts faits à la main, imaginés par un frère et une sœur dans leur maison d'enfance, face à un jardin en Italie. Ce point de départ intime définit encore aujourd'hui l'âme de la marque : une mode sincère, émotionnelle, portée par une liberté sans limites.",
+      "Malgré une production industrielle, la maison cultive l'obsession du détail artisanal. Forte Forte travaille lentement, délibérément, loin de l'agitation de la mode saisonnière. Le résultat : des pièces intemporelles où passé et présent fusionnent harmonieusement, où la matière est respectée dans son caractère, et la couleur choisie avec une sensibilité d'artiste.",
+      "Chez Honoris Cosa, Forte Forte représente la mode qui touche — des robes, des tops et des pièces de caractère qui épousent le corps sans le contraindre, et restent dans la garde-robe bien au-delà d'une saison.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1613909671501-f9678ffc1d33?w=1080&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1080&q=80",
+    ],
   },
+
   "vanessa-bruno": {
     paragraphs: [
-      "Parisienne par excellence, Vanessa Bruno est élevée par une mère Danoise et un père Français. En 1996, elle crée une marque à son nom et cherche à transgresser le quotidien pour donner à chaque femme une garde-robe moderne. Elle ouvre sa première boutique rive gauche en 1998 et lance la première année son célèbre sac cabas.",
-      "Avec quelques paillettes sur une toile de coton, elle revisite un objet du quotidien pour le rendre iconique, jusqu'à devenir un incontournable international. Le sac cabas de Vanessa Bruno est à la fois chic et pratique. Il se décline à l'infini, en toile de lin, en raphia ou encore en cuir velours…",
-      "Influencée par les deux univers de ses parents, elle imagine des collections où ces deux cultures se croisent et s'entremêlent. Elle poursuit l'idéal d'une femme indépendante et urbaine, ancrée dans son époque. Aujourd'hui, on dit qu'un sac cabas Vanessa Bruno se vend toutes les 30 minutes à travers le monde.",
+      "Vanessa Bruno est l'incarnation de la parisienne libre et moderne — celle qui crée ses propres règles. En 1996, elle lance sa marque avec l'ambition de donner à chaque femme une garde-robe transgressant le quotidien. Deux ans plus tard, son premier sac cabas en toile pailletée devient un phénomène mondial.",
+      "Ce sac iconique, conçu avec quelques paillettes sur une toile de coton brute, revisite l'ordinaire pour le rendre extraordinaire. Il se décline depuis en lin, raphia, cuir velours, et continue de se vendre toutes les 30 minutes dans le monde. Les collections, influencées par ses deux héritages danois et français, dessinent les contours d'une féminité indépendante et urbaine, ancrée dans son époque.",
+      "En boutique chez Honoris Cosa, Vanessa Bruno offre ce mélange singulier de légèreté et d'élégance — des pièces et accessoires qui semblent nés naturellement dans une garde-robe parisienne contemporaine.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1589363460779-cd717d2ed8fa?w=1080&q=80",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1080&q=80",
+    ],
   },
+
   "faliero-sarti": {
     paragraphs: [
-      "L'histoire de Faliero Sarti commence en 1948, lorsque Faliero crée sa propre filature près de Florence, en Italie. Toute la famille s'est très vite mise à suivre les traces de leur ainé dans cette usine. D'abord reprise par le fils de Faliero, la filature de tissus italiens est très vite devenue le fournisseur de grandes maisons de luxe telles que Chanel, Dior, Vivienne Westwood ou Ann Deleumeester.",
-      "En 1991, la petite fille de Faliero, Monica, revient avec de nouvelles idées en tête. Après avoir passé trois ans à étudier la mode à New York, elle décide de rejoindre l'entreprise familiale. Elle s'intéresse de près à la division d'accessoire de la maison. Pour dépoussiérer cet accessoire qu'était le foulard, elle décide de se fier à son instinct : retirer l'élément le plus traditionnel, les franges. Elle commence à faire bouillir, brûler et trouer le cachemire. Elle lance une vraie révolution dans le monde de la mode.",
-      "Monica s'inspire de la vie quotidienne pour donner vie à ses réalisations. Les écharpes créées par la maison Faliero Sarti sont pensées de sorte que, lorsque quelqu'un en porte une, il trouve une certaine douceur. Les écharpes sont, d'après Monica Sarti, la « lingerie du col » car elles touchent directement la peau. Aujourd'hui, Monica Sarti est la directrice artistique de la maison Faliero Sarti et continue d'impressionner avec ses créations toujours plus originales et qualitatives.",
+      "Depuis 1948, la famille Sarti tisse des textiles d'exception près de Florence. D'abord fournisseur confidentiel de Chanel, Dior ou Vivienne Westwood, la filature est transformée par Monica Sarti en 1991 en une maison d'accessoires à part entière — après qu'elle eut étudié la mode à New York et décidé de révolutionner le foulard.",
+      "Monica retire les franges, brûle le cachemire, le troue, le fait bouillir : elle réinvente un accessoire que l'on croyait figé. Ses écharpes deviennent ce qu'elle appelle « la lingerie du col » — des pièces qui touchent directement la peau et transmettent une douceur unique. Inspirée du quotidien, elle crée des créations portées à la fois comme des œuvres d'art et des compagnons du quotidien.",
+      "Chez Honoris Cosa, Faliero Sarti est synonyme de raffinement discret — des écharpes et accessoires en cachemire travaillé qui transforment une tenue simple en quelque chose d'inoubliable.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1080&q=80",
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=1080&q=80",
+    ],
   },
+
   "jerome-dreyfuss": {
     paragraphs: [
-      "L'histoire de Jérôme Dreyfuss commence en 1998, lorsqu'il lance sa collection de prêt à porter féminin qu'il nomme « Couture à Porter ». Il est qualifié « d'Enfant terrible de la Mode » par la presse. Cette année là, il gagne le prix de l'ANDAM et crée des costumes pour l'album Invincible de Michael Jackson.",
-      "En 2002, Jérôme Dreyfuss lance sa première collection d'accessoires : « Roots de luxe ». Instantanément acclamés par la presse, ces sacs ont immédiatement trouvé le chemin du coeur des jeunes parisiennes. Souples et ultra légers, discrets mais toujours élégants… Ces pièces sont vite devenues une référence pour les femmes en quête d'accessoires raffinés aux détails astucieux.",
-      "Les sacs Jérôme Dreyfuss sont reconnaissables grâce à leur fabrication artisanale. Un travail aux formes généreuses et aux détails innovants. En 2004, Jérôme Dreyfuss adopte un côté plus éco-responsable. Il milite pour une planète plus propre et crée le label agricouture. Il intègre des règles de développement durable à la fabrication de ses produits : cuirs végétaux, matières premières achetées auprès de fournisseurs européens exclusivement, consommables recyclables…",
+      "Jérôme Dreyfuss est l'enfant terrible de la mode parisienne. En 1998, il remporte le prix de l'ANDAM et crée les costumes de l'album Invincible de Michael Jackson. En 2002, il lance « Roots de luxe » — sa première collection de sacs, acclamée immédiatement par la presse et adoptée par toutes les femmes en quête d'un accessoire raffiné sans ostentation.",
+      "Ses sacs sont reconnaissables à leur fabrication entièrement artisanale : formes généreuses, cuirs souples, détails innovants. En 2004, Jérôme Dreyfuss franchit un pas supplémentaire en intégrant une démarche éco-responsable, avec le label Agricouture : cuirs végétaux, matières premières européennes exclusivement, consommables recyclables.",
+      "En boutique chez Honoris Cosa, les sacs Jérôme Dreyfuss incarnent l'élégance sans effort — des pièces ultra-légères et discrètes qui accompagnent les femmes au quotidien avec une complicité rare.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1589363358751-ab05797e5629?w=1080&q=80",
+      "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=1080&q=80",
+    ],
   },
+
   masons: {
     paragraphs: [
-      "Mason's est une maison de mode italienne ayant vu le jour dans la région de la Ligurie, en bordure de mer. Créée en 1974 par Giorgio Martini, la marque souhaite développer un tout nouveau style en associant les codes de l'uniforme militaire et les lignes souples de l'élégance à l'italienne.",
-      "La conception des vêtements est également inspirée des grandes figures emblématiques. Le Dalaï-Lama, Kennedy, Che Guevara ou encore Indira Gandhi.. Tous ont inspiré les collections de la maison Mason's. Une marque qui allie sobriété et avant-gardisme tout en gardant une part de tradition. Mason's véhicule de nombreuses valeurs comme la simplicité, la modernité, et le souci du détail.",
-      "Aujourd'hui, Mason's élève au rang des marques haut-de-gamme à l'italienne. Mason's promet des tissus résistants et qualitatifs. Des vêtements authentiques et travaillés débouchant sur un style chic et pratique qui reflète la mode italienne moderne.",
+      "Mason's naît en 1974 en Ligurie, sur la côte méditerranéenne italienne. Fondée par Giorgio Martini, la maison s'est donné une mission unique : réconcilier la rigueur de l'uniforme militaire avec la souplesse de l'élégance à l'italienne. Un mariage de contrastes qui définit son identité depuis plus de 50 ans.",
+      "Les collections puisent leur inspiration dans les grandes figures de l'histoire — le Dalaï-Lama, Kennedy, Che Guevara, Indira Gandhi — en cherchant à capturer dans chaque coupe une forme de noblesse fonctionnelle. Les tissus sont résistants, qualitatifs, pensés pour durer. La sobriété est élevée au rang de valeur esthétique.",
+      "En boutique chez Honoris Cosa, Mason's propose des pièces structurées d'une modernité intemporelle — des pantalons, vestes et bermudas qui habillent l'homme avec autorité et décontraction, fidèles à l'esprit de la Dolce Vita ligurienne.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=1080&q=80",
+      "https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=1080&q=80",
+    ],
   },
+
   seven: {
     paragraphs: [
-      "Seven est une marque de denim premium conçue en Californie. Reconnue pour la qualité de ses jeans et de ses pièces en jean, elle propose des vêtements pour femmes et hommes, avec un souci du détail et un style californien.",
-      "La marque s'est imposée dans l'univers du prêt-à-porter haut de gamme avec des coupes iconiques et des finitions soignées. Retrouvez les créations Seven en boutique.",
+      "Seven For All Mankind est née en Californie avec une obsession : réinventer le jean. Depuis sa création, la marque s'est imposée comme l'une des références mondiales du denim premium, grâce à des coupes qui épousent le corps avec une précision chirurgicale et des matières travaillées comme des tissus nobles.",
+      "Chaque pièce est conçue pour sublimer la silhouette, que ce soit dans une coupe skinny, droite ou évasée. Les finitions soignées, les lavages exclusifs et les détails distinctifs ont fait de Seven une marque que l'on reconnaît à l'œil — et que l'on garde pour longtemps.",
+      "Chez Honoris Cosa, Seven représente le denim d'exception — celui que l'on porte habillé ou décontracté, avec la certitude d'un vêtement qui allie qualité californienne et sophistication contemporaine.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1542272604-787c3835535d?w=1080&q=80",
+      "https://images.unsplash.com/photo-1591884807235-1dc6c2e148b1?w=1080&q=80",
+    ],
   },
+
   "majestic-filatures": {
     paragraphs: [
-      "En 1989, Franck Ellia et Roland Chelly décident de lancer une marque autour d'une pièce basique : le t-shirt. Ils souhaitent lui donner des allures haut-de-gamme pour replacer le t-shirt au coeur de nos garde-robes et nous offrir une silhouette chic.",
-      "Depuis plus de 30 ans, Majestic Filatures élabore des t-shirts de luxe dans ses ateliers parisiens. De fabrication exclusivement européenne, cette pièce basique est traitée comme un vêtement noble. Les stylistes, modélistes, maîtres tailleurs et couturières montent des prototypes faits sur mesure. Un savoir-faire « fait main » unique à la manière des grandes maisons de couture.",
-      "La maison Majestic Filatures apporte un soin particulier à la qualité de fabrication de ses produits. Des matières résistantes, luxueuses et douces à porter.. Majestic Filatures est un précurseur en termes de développement des meilleurs fils dans les plus belles matières. Ils prônent le luxe durable. Ils ont notamment lancé leur nouvelle gamme de Pulls en « Eco-cachemire » pour leur collection Tricot, un cachemire éco-responsable produit en Italie.",
+      "En 1989, Franck Ellia et Roland Chelly ont une idée révolutionnaire : faire du t-shirt une pièce de luxe. Depuis leurs ateliers parisiens, ils vont consacrer plus de 30 ans à perfectionner ce basique, en lui conférant le traitement habituellement réservé aux grandes maisons de couture.",
+      "Chaque t-shirt est élaboré comme un vêtement sur mesure : stylistes, modélistes, maîtres tailleurs et couturières travaillent à la main sur des prototypes en matières exclusivement européennes. La maison est pionnière dans le développement de fils nobles — coton pima, soie, cachemire — et a récemment lancé une gamme en éco-cachemire produit en Italie.",
+      "Chez Honoris Cosa, Majestic Filatures est la signature du luxe invisible — ces pièces que l'on porte contre la peau avec une confiance absolue dans leur qualité, leur douceur et leur capacité à traverser les années sans jamais dater.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1080&q=80",
+      "https://images.unsplash.com/photo-1613909671501-f9678ffc1d33?w=1080&q=80",
+    ],
   },
+
   newtone: {
     paragraphs: [
-      "Newtone est une marque française ancrée dans un esprit rock et bohème. Ses collections proposent des pièces aux coupes décontractées, aux matières généreuses et aux imprimés soigneusement sélectionnés pour une femme libre et affirmée.",
-      "Chaque pièce Newtone est pensée pour durer, conçue avec des matières nobles et une attention particulière à la coupe. La marque célèbre une féminité naturelle, loin des diktats de la mode éphémère, pour une garde-robe de caractère.",
+      "Newtone est une marque française qui célèbre les femmes libres et affirmées. Ancrée dans un esprit rock teinté de bohème, elle propose des collections où les matières nobles, les imprimés audacieux et les coupes généreuses cohabitent avec naturel — pour une garde-robe de caractère, loin des diktats de la mode éphémère.",
+      "Chaque pièce Newtone est conçue pour durer, aussi bien dans sa fabrication que dans son style. La marque travaille des matières choisies avec soin — lin, coton lourd, laine douce — et des coupes qui vieillissent bien. L'esthétique emprunte autant au vintage qu'au contemporain, créant des silhouettes reconnaissables sans jamais être uniformes.",
+      "En boutique chez Honoris Cosa, Newtone habille celles qui assument leur style avec conviction — des femmes qui cherchent dans leurs vêtements une extension naturelle de leur personnalité, pas un costume.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1080&q=80",
+      "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=1080&q=80",
+    ],
   },
+
   "absolut-cachemere": {
     paragraphs: [
-      "Absolut Cashmere réinvente le cachemire avec une approche résolument moderne et engagée. Chaque pièce est tissée à partir de cachemire mongol d'exception, sélectionné pour sa douceur incomparable et sa résistance dans le temps.",
-      "La marque propose des silhouettes épurées, des coloris raffinés et des matières d'une qualité irréprochable. Absolut Cashmere incarne le luxe sobre, celui que l'on garde pour toujours — une pièce intemporelle qui traverse les saisons avec grâce.",
+      "Absolut Cashmere réinvente le cachemire pour la femme d'aujourd'hui. Refusant les codes figés du luxe traditionnel, la marque propose des silhouettes modernes, des coloris travaillés avec soin et un cachemire mongol d'exception — sélectionné pour sa douceur incomparable et sa résistance dans le temps.",
+      "Chaque pièce est tissée à partir de fibres de première qualité, selon des processus de fabrication rigoureux qui garantissent une tenue parfaite saison après saison. Les coupes sont épurées, les volumes maîtrisés : ni ostentatoires, ni banales. Absolut Cashmere incarne le luxe sobre, celui que l'on garde pour toujours.",
+      "En boutique chez Honoris Cosa, Absolut Cashmere est une invitation à investir dans l'essentiel — un pull, un cardigan, une écharpe portés avec la certitude d'une qualité irréprochable et d'un style intemporel.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=1080&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
+    ],
   },
+
   "bella-jones": {
     paragraphs: [
-      "Bella Jones est une marque de mode féminine qui allie élégance parisienne et modernité contemporaine. Ses collections proposent des silhouettes soignées, des matières précieuses et des coupes qui subliment la femme d'aujourd'hui.",
-      "Derrière chaque création Bella Jones se cache une recherche exigeante sur la qualité des matières et la précision de la coupe. La marque s'adresse à une femme qui sait ce qu'elle veut : du style, du confort, et des pièces qui traversent le temps.",
+      "Bella Jones est une marque de prêt-à-porter féminin qui place la femme contemporaine au centre de chaque création. Ses collections proposent des silhouettes équilibrées, des matières soigneusement sélectionnées et une esthétique qui conjugue élégance parisienne et modernité assumée.",
+      "Derrière chaque pièce se cache une recherche exigeante sur la coupe et la matière — car chez Bella Jones, un vêtement bien conçu est avant tout un vêtement que l'on porte avec aisance. Les lignes sont nettes, les finitions précises, et le style reste accessible sans jamais sacrifier la sophistication.",
+      "Chez Honoris Cosa, Bella Jones s'adresse aux femmes qui savent ce qu'elles veulent : des vêtements beaux, portables, et pensés pour traverser les occasions avec grâce — du bureau à la soirée, du quotidien au week-end.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1080&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+    ],
   },
+
   "laid-back": {
     paragraphs: [
-      "Laid Back incarne un art de vivre décontracté et sophistiqué. La marque propose des collections inspirées du casual chic scandinave, où la simplicité des formes rencontre la qualité des matières pour une élégance naturelle au quotidien.",
-      "Les pièces Laid Back sont pensées pour s'intégrer facilement dans une garde-robe existante. Des basiques revisités, des coupes flatteuses et des matières douces au toucher font de chaque vêtement une pièce que l'on porte encore et encore.",
+      "Laid Back incarne un art de vivre : celui de l'élégance sans effort, inspirée par la douceur de vivre scandinave. La marque propose des collections où les formes simples rencontrent des matières généreuses, pour une garde-robe décontractée qui ne renonce jamais à la qualité.",
+      "Les pièces sont pensées pour s'intégrer naturellement dans n'importe quelle tenue. Des basiques revisités avec sensibilité, des coupes flatteuses et des matières douces au toucher : Laid Back construit une mode du quotidien qui vieillit bien, qu'on porte encore et encore sans s'en lasser.",
+      "En boutique chez Honoris Cosa, Laid Back représente le vestiaire de la femme moderne qui fait confiance à sa garde-robe — des pièces solides, belles et reposantes, qui habillent chaque journée avec un naturel élégant.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=1080&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+    ],
   },
+
   momoni: {
     paragraphs: [
-      "Née en Italie, Momoni est une maison de mode qui célèbre la féminité italienne dans toute sa splendeur. Ses collections se distinguent par des imprimés exclusifs, des matières légères et des silhouettes qui épousent le corps avec sensualité.",
-      "Momoni puise son inspiration dans l'art, les voyages et la beauté du quotidien. Chaque collection raconte une histoire, portée par des couleurs vibrantes et des pièces aux finitions artisanales. Une invitation au voyage à travers le prisme de la mode italienne.",
+      "Momoni est une maison de mode italienne qui célèbre la féminité dans toute sa richesse. Ses collections se distinguent par des imprimés exclusifs, des matières légères et des silhouettes qui drapent le corps avec sensualité — une invitation permanente à la joie de s'habiller.",
+      "Fondée en Italie, Momoni puise son inspiration dans l'art, les voyages et la beauté du quotidien. Chaque collection raconte une histoire à travers des couleurs vibrantes, des textures soigneusement choisies et des finitions artisanales qui témoignent d'un savoir-faire rare. La mode y est vécue comme une forme d'expression personnelle, libre et joyeuse.",
+      "Chez Honoris Cosa, Momoni habille les femmes qui aiment la mode comme on aime la vie — avec passion, légèreté et un goût prononcé pour les belles choses. Des pièces qui font sourire dès qu'on les enfile.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=1080&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1080&q=80",
+    ],
   },
+
   "lou-andrea": {
     paragraphs: [
-      "Lou Andrea est une marque de créateur qui propose des pièces féminines alliant artisanat et modernité. Chaque collection est construite autour de silhouettes soignées, de matières nobles et d'une vision singulière de l'élégance contemporaine.",
-      "La marque se distingue par son attention aux détails et sa volonté de proposer des vêtements portables au quotidien tout en conservant une dimension créative forte. Lou Andrea habille une femme à la fois libre et raffinée.",
+      "Lou Andrea est une marque de créateur qui allie artisanat exigeant et vision contemporaine de la féminité. Chaque collection s'articule autour de pièces à la personnalité forte, construites dans des matières nobles et façonnées avec une attention particulière aux détails qui font la différence.",
+      "La marque se distingue par sa capacité à créer des vêtements portables au quotidien tout en conservant une dimension créative affirmée. Lou Andrea habille une femme à la fois libre et raffinée — celle qui n'a pas besoin de choisir entre l'élégance et le confort, entre l'originalité et la durabilité.",
+      "En boutique chez Honoris Cosa, Lou Andrea propose des silhouettes uniques, pensées pour être portées avec conviction et plaisir, saison après saison.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1080&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1080&q=80",
+    ],
   },
+
   "claris-virot": {
     paragraphs: [
-      "Claris Virot est une maison d'accessoires française spécialisée dans les chapeaux et les sacs. Fondée à Paris, la marque perpétue un savoir-faire artisanal exigeant tout en proposant des pièces résolument contemporaines.",
-      "Chaque chapeau Claris Virot est une pièce à part entière, façonnée avec soin dans des matières d'exception. La marque s'est imposée comme une référence dans le monde des accessoires de mode, séduisant une clientèle internationale en quête de pièces rares et distinctives.",
+      "Claris Virot est une maison d'accessoires parisienne spécialisée dans les chapeaux et les sacs. Fondée à Paris, elle perpétue un savoir-faire artisanal d'une exigence rare, en créant des pièces résolument contemporaines qui réinterprètent les codes de la chapellerie traditionnelle avec un œil neuf.",
+      "Chaque chapeau est une œuvre à part entière, façonné dans des matières d'exception — feutres nobles, pailles fines, cuirs travaillés. La marque s'est imposée comme une référence internationale auprès de femmes en quête de pièces distinctives, qui ne ressemblent à rien d'autre et qui transforment instantanément une tenue.",
+      "Chez Honoris Cosa, Claris Virot représente l'accessoire qui fait la tenue — ce chapeau ou ce sac que l'on remarque immédiatement, et qui trahit le goût de celle qui le porte pour les belles choses faites avec soin.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=1080&q=80",
+      "https://images.unsplash.com/photo-1534126511673-b6899657816a?w=1080&q=80",
+    ],
   },
+
   soeur: {
     paragraphs: [
-      "Soeur est une marque parisienne créée par deux sœurs, Domitille et Angélique Brion. Elle propose des collections féminines teintées d'une douceur romantique et d'une élégance décontractée, à l'image de la femme parisienne moderne.",
-      "Les collections Soeur se distinguent par leurs imprimés délicats, leurs matières fluides et leurs coupes flatteuses. La marque incarne une féminité assumée et joyeuse, où chaque pièce raconte une histoire de complicité et de style partagé.",
+      "Sœur est une marque parisienne créée par deux sœurs, Domitille et Angélique Brion. Née d'une complicité familiale profonde, elle traduit en vêtements une vision partagée de la féminité : romantique sans être naïve, élégante sans être rigide, libre et joyeuse avant tout.",
+      "Les collections Sœur se reconnaissent à leurs imprimés délicats, leurs matières fluides et leurs coupes qui mettent en valeur le corps avec une douceur naturelle. La marque construit une mode du quotidien habitée par une vraie sensibilité — celle de deux femmes qui habillent d'autres femmes avec sincérité et bienveillance.",
+      "Chez Honoris Cosa, Sœur incarne la mode que l'on partage — des pièces que l'on s'emprunte, que l'on offre, que l'on transmet, et qui racontent à chaque fois une histoire de style et de complicité.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1585914924626-15adac1e6402?w=1080&q=80",
+      "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=1080&q=80",
+    ],
   },
+
   "ct-plage": {
     paragraphs: [
-      "CT Plage est une marque spécialisée dans les collections balnéaires et de villégiature. Elle propose des pièces pensées pour les vacances : maillots de bain, paréos, tenues de plage et robes légères qui capturent l'essence de l'été.",
-      "La marque se distingue par ses imprimés lumineux, ses matières adaptées au soleil et à la mer, et ses coupes qui mettent en valeur la silhouette. CT Plage invite à la dolce vita avec des collections qui prolongent l'esprit des vacances bien au-delà de la plage.",
+      "CT Plage est la marque balnéaire par excellence — celle qui capture l'essence de l'été dans chaque pièce. Spécialisée dans les collections de plage et de villégiature, elle propose maillots, paréos, robes légères et tenues de plage pensés pour les femmes qui vivent l'été avec intensité et élégance.",
+      "Les collections se distinguent par leurs imprimés lumineux, leurs matières adaptées au soleil et à la mer, et leurs coupes qui mettent en valeur la silhouette sans contrainte. CT Plage incarne la Dolce Vita balnéaire — une invitation à profiter de chaque instant de lumière avec style et désinvolture.",
+      "En boutique chez Honoris Cosa, CT Plage prolonge l'esprit des vacances bien au-delà des plages. Des pièces qui vivent aussi en ville, le soir en terrasse, lors d'un week-end en escapade — partout où le soleil invite à s'habiller avec légèreté.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1080&q=80",
+      "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=1080&q=80",
+    ],
   },
+
   tonal: {
     paragraphs: [
-      "Tonal propose une mode épurée construite autour du jeu des matières et des nuances monochromes. La marque célèbre la puissance du minimalisme et l'art de la couleur dans ses expressions les plus subtiles.",
-      "Chaque collection Tonal est une exploration des tonalités et des textures. Des pièces intemporelles, pensées pour être assemblées et superposées, qui constituent une garde-robe cohérente et raffinée pour la femme contemporaine.",
+      "Tonal est une marque construite autour d'une philosophie minimaliste et sensorielle : la puissance du ton sur ton, la beauté des matières qui se révèlent dans la subtilité. Chaque collection explore les nuances monochromes et les jeux de textures pour créer des silhouettes à la fois épurées et profondes.",
+      "Les pièces Tonal sont conçues pour se superposer, se combiner, se répondre. La couleur n'est jamais choisie au hasard — chaque nuance est travaillée pour créer des harmonies graphiques et sensorielles. Le résultat est une garde-robe cohérente, raffinée, dans laquelle chaque pièce trouve naturellement sa place.",
+      "Chez Honoris Cosa, Tonal habille les femmes qui aiment la mode pensée — celles qui construisent leur style avec méthode et sensibilité, et pour qui s'habiller est un vrai plaisir intellectuel autant qu'esthétique.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1080&q=80",
+      "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=1080&q=80",
+    ],
   },
+
   bowery: {
     paragraphs: [
-      "Bowery s'inspire de l'énergie urbaine et créative de New York pour proposer des collections à la fois décontractées et sophistiquées. La marque allie l'esprit downtown newyorkais à une exigence qualitative européenne.",
-      "Les pièces Bowery sont conçues pour une femme active et urbaine, qui jongle entre vie professionnelle et personnelle avec style. Des coupes nettes, des matières premium et une palette de couleurs intemporelle définissent l'identité de la marque.",
+      "Bowery s'inspire de l'énergie créative et urbaine de New York — et plus précisément de cette rue mythique de downtown Manhattan qui a vu naître tant d'artistes et de contre-cultures. La marque traduit cet héritage en une mode à la fois décontractée et sophistiquée, qui allie l'esprit de la rue à une exigence qualitative européenne.",
+      "Les pièces Bowery sont taillées pour une femme active, qui jongle entre vie professionnelle et personnelle avec style et efficacité. Des coupes nettes, des matières premium soigneusement sélectionnées et une palette intemporelle composent une garde-robe urbaine sans compromis — fonctionnelle, élégante, toujours juste.",
+      "En boutique chez Honoris Cosa, Bowery représente la mode du mouvement — des pièces que l'on porte de la réunion du matin au dîner du soir, sans jamais avoir l'impression de faire des concessions sur le style.",
     ],
-    images: [DESC_IMG, DESC_IMG2],
+    images: [
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1080&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1080&q=80",
+    ],
   },
+
   "la-nouvelle": {
     paragraphs: [
-      "La Nouvelle est une marque de mode féminine qui propose des collections inspirées par la femme d'aujourd'hui : libre, moderne et assumée. Chaque pièce est pensée pour s'adapter aux différents moments de la vie avec élégance.",
-      "La marque se distingue par une approche créative singulière, mêlant savoir-faire artisanal et vision contemporaine. La Nouvelle invite chaque femme à se réinventer à travers des pièces fortes, portées avec conviction.",
+      "La Nouvelle est une marque de mode féminine contemporaine qui place la liberté au cœur de chaque collection. Ses pièces s'adressent à une femme moderne et assumée, qui cherche dans ses vêtements un reflet fidèle de sa personnalité — forte, nuancée, en mouvement permanent.",
+      "La marque se distingue par une approche créative singulière qui mêle savoir-faire artisanal et vision résolument contemporaine. Chaque collection propose des pièces fortes, construites dans des matières choisies avec soin, qui invitent la femme qui les porte à se réinventer sans jamais se trahir.",
+      "Chez Honoris Cosa, La Nouvelle incarne cette mode de l'affirmation — des pièces portées avec conviction, qui prennent toute leur dimension sur la femme qui les a choisies parce qu'elles lui ressemblent.",
     ],
-    images: [DESC_IMG],
+    images: [
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1080&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+    ],
   },
 };
 

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { X } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { ImageIcon, X } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
 import {
   BRAND_IMAGES,
   BRAND_LABELS,
@@ -28,63 +28,124 @@ const gridItem = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
 };
 
-function BrandStory({ slug }: { slug: BrandSlug }) {
-  const nodes = useMemo(() => {
-    const desc = LONG_DESCRIPTIONS[slug];
-    const out: React.ReactNode[] = [];
-    let imgIdx = 0;
-    const { paragraphs, images } = desc;
-
-    paragraphs.forEach((text, i) => {
-      out.push(
-        <p key={`p-${i}`} className={modalStyles.paragraph}>
-          {text}
-        </p>,
-      );
-      if (images[imgIdx]) {
-        const src = images[imgIdx];
-        imgIdx += 1;
-        out.push(
-          <div key={`img-${i}`} className={modalStyles.inlineFigure}>
-            <Image
-              src={src}
-              alt=""
-              fill
-              className={modalStyles.inlineImg}
-              sizes="(min-width: 768px) 42vw, 100vw"
-            />
-          </div>,
-        );
-      }
-    });
-
-    while (imgIdx < images.length) {
-      const src = images[imgIdx];
-      imgIdx += 1;
-      out.push(
-        <div key={`img-extra-${imgIdx}`} className={modalStyles.inlineFigure}>
+function AestheticSlot({
+  label,
+  src,
+  slot,
+  priority,
+}: {
+  label: string;
+  src: string | undefined;
+  slot: 1 | 2;
+  priority?: boolean;
+}) {
+  return (
+    <div
+      className={`${modalStyles.aestheticSlot} ${
+        slot === 1 ? modalStyles.aesthetic1 : modalStyles.aesthetic2
+      }`}
+    >
+      <span className={modalStyles.aestheticLabel}>{label}</span>
+      {src ? (
+        <div className={modalStyles.aestheticInner}>
           <Image
             src={src}
             alt=""
             fill
-            className={modalStyles.inlineImg}
-            sizes="(min-width: 768px) 42vw, 100vw"
+            className={modalStyles.aestheticImg}
+            sizes="(min-width: 768px) 18vw, 42vw"
+            priority={priority}
           />
-        </div>,
-      );
-    }
+        </div>
+      ) : (
+        <div className={modalStyles.placeholderInner} aria-hidden>
+          <ImageIcon
+            className={modalStyles.placeholderIcon}
+            strokeWidth={1}
+            size={28}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
 
-    return out;
-  }, [slug]);
+function BrandModalContent({
+  slug,
+  onDiscover,
+}: {
+  slug: BrandSlug;
+  onDiscover: () => void;
+}) {
+  const data = LONG_DESCRIPTIONS[slug];
+  const heroSrc = BRAND_IMAGES[slug];
+  const quote = data.paragraphs[0] ?? "";
+  const bodyParagraphs = data.paragraphs.slice(1);
+  const imgA = data.images[0];
+  const imgB = data.images[1];
 
-  return <div className={modalStyles.article}>{nodes}</div>;
+  const title = BRAND_LABELS[slug];
+
+  return (
+    <>
+      <div className={modalStyles.modalHeader}>
+        <span className={modalStyles.focusLabel}>Focus maison</span>
+      </div>
+      <div className={modalStyles.modalScroll}>
+        <div className={modalStyles.modalGrid}>
+          <div className={modalStyles.contentCol}>
+            <h2 className={modalStyles.modalTitle} id="modal-brand-title">
+              {title}
+            </h2>
+            {quote ? (
+              <blockquote className={modalStyles.quote}>{quote}</blockquote>
+            ) : null}
+            <div className={modalStyles.article}>
+              {bodyParagraphs.map((text, i) => (
+                <p key={i} className={modalStyles.paragraph}>
+                  {text}
+                </p>
+              ))}
+            </div>
+            <button
+              type="button"
+              className={modalStyles.ctaPrimary}
+              onClick={onDiscover}
+            >
+              Découvrir la sélection
+            </button>
+          </div>
+
+          <div className={modalStyles.galleryCol}>
+            <div className={modalStyles.galleryGrid}>
+              <AestheticSlot
+                label="Aesthetic 1"
+                src={imgA}
+                slot={1}
+                priority
+              />
+              <AestheticSlot label="Aesthetic 2" src={imgB} slot={2} />
+              <div className={modalStyles.featuredSlot}>
+                <Image
+                  src={heroSrc}
+                  alt=""
+                  fill
+                  className={modalStyles.featuredImg}
+                  sizes="(min-width: 768px) 28vw, 88vw"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default function MarquesSection() {
   const [open, setOpen] = useState(false);
   const [selectedSlug, setSelectedSlug] = useState<BrandSlug | null>(null);
-
-  const thematicSrc = selectedSlug ? BRAND_IMAGES[selectedSlug] : "";
 
   const openModal = useCallback((slug: BrandSlug) => {
     setSelectedSlug(slug);
@@ -96,6 +157,15 @@ export default function MarquesSection() {
     setOpen(false);
     document.body.style.overflow = "";
   }, []);
+
+  const handleDiscover = useCallback(() => {
+    closeModal();
+    requestAnimationFrame(() => {
+      document
+        .getElementById("contact")
+        ?.scrollIntoView({ behavior: "smooth" });
+    });
+  }, [closeModal]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -176,7 +246,7 @@ export default function MarquesSection() {
       </section>
 
       <AnimatePresence>
-        {open && (
+        {open && selectedSlug ? (
           <motion.div
             className={modalStyles.overlay}
             style={{ opacity: 1, pointerEvents: "auto" }}
@@ -200,49 +270,18 @@ export default function MarquesSection() {
               aria-labelledby="modal-brand-title"
               onClick={(e) => e.stopPropagation()}
             >
-              {selectedSlug ? (
-                <div className={modalStyles.panelInner}>
-                  <div className={modalStyles.imageSide}>
-                    <Image
-                      src={thematicSrc}
-                      alt=""
-                      fill
-                      className={modalStyles.imageSideImg}
-                      sizes="(min-width: 768px) 380px, 100vw"
-                    />
-                  </div>
-                  <div className={modalStyles.contentSide}>
-                    <button
-                      type="button"
-                      className={`${modalStyles.close} flex size-10 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-or`}
-                      onClick={closeModal}
-                      aria-label="Fermer"
-                    >
-                      <X className="size-5" strokeWidth={1.25} aria-hidden />
-                    </button>
-                    <div>
-                      <span className={modalStyles.modalKicker}>La marque</span>
-                      <h2
-                        className={modalStyles.modalTitle}
-                        id="modal-brand-title"
-                      >
-                        {BRAND_LABELS[selectedSlug]}
-                      </h2>
-                    </div>
-                    <BrandStory slug={selectedSlug} />
-                    <a
-                      href="#contact"
-                      className={`${modalStyles.cta} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-or`}
-                      onClick={closeModal}
-                    >
-                      Découvrir en boutique
-                    </a>
-                  </div>
-                </div>
-              ) : null}
+              <button
+                type="button"
+                className={`${modalStyles.close} absolute right-4 top-4 z-10 md:right-6 md:top-5`}
+                onClick={closeModal}
+                aria-label="Fermer"
+              >
+                <X className="size-5" strokeWidth={1.15} aria-hidden />
+              </button>
+              <BrandModalContent slug={selectedSlug} onDiscover={handleDiscover} />
             </motion.div>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     </>
   );
