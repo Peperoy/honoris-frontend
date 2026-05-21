@@ -53,31 +53,39 @@
 
 .close {
   position: absolute;
-  top: 1.15rem;
-  right: 1.15rem;
-  z-index: 2;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background: var(--color-lin);
+  border: 1px solid color-mix(in srgb, var(--color-encre) 14%, transparent);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
   color: var(--color-encre);
-  opacity: 0.85;
   transition:
-    opacity 0.2s ease,
-    color 0.2s ease;
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 @media (min-width: 768px) {
   .close {
-    top: 1.35rem;
-    right: 1.5rem;
+    top: 1.25rem;
+    right: 1.25rem;
   }
 }
 
 .close:hover {
-  opacity: 1;
-  color: var(--color-encre);
+  background: var(--color-encre);
+  color: var(--color-lin);
+  border-color: var(--color-encre);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
 }
 
 .close:focus-visible {
@@ -97,7 +105,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 0 1.25rem 1.75rem;
+  padding: 2.5rem 1.25rem 1.75rem;
 }
 
 @media (min-width: 768px) {

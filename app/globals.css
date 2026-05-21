@@ -94,3 +94,43 @@
     display: block;
   }
 }
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.hc-marquee-mask {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hc-marquee-track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: max-content;
+  animation-name: marquee-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 60s;
+  will-change: transform;
+}
+
+.hc-marquee-group {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hc-marquee-track {
+    animation: none;
+  }
+}

@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     template: "%s | HONORISCOSA.",
   },
   description:
-    "Honoriscosa — boutique de luxe à Valenciennes. Curation intemporelle, marques confidentielles et créateurs émergents.",
+    "Honoriscosa — boutique multimarques à Valenciennes. Vêtements, accessoires et marques de qualité, choisis avec attention.",
   openGraph: {
     title: "HONORISCOSA. | Boutique de Luxe Valenciennes",
     description:
-      "Honoriscosa — boutique de luxe à Valenciennes. Curation intemporelle, marques confidentielles et créateurs émergents.",
+      "Honoriscosa — boutique multimarques à Valenciennes. Vêtements, accessoires et marques de qualité, choisis avec attention.",
     locale: "fr_FR",
     type: "website",
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HONORISCOSA. | Boutique de Luxe Valenciennes",
     description:
-      "Honoriscosa — boutique de luxe à Valenciennes. Curation intemporelle.",
+      "Honoriscosa — boutique multimarques à Valenciennes. Vêtements, accessoires et marques de qualité.",
   },
 };
 

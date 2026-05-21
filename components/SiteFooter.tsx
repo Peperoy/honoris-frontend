@@ -139,9 +139,8 @@ export default function SiteFooter() {
               />
             </div>
             <p className="mt-5 font-[family-name:var(--font-body)] text-sm font-light leading-relaxed text-lin/65">
-              Boutique de luxe à Valenciennes : sélection pointue de créateurs,
-              maisons confidentielles et pièces intemporelles. Plus qu&apos;une
-              boutique, un style de vie.
+              Boutique multimarques à Valenciennes. Vêtements, accessoires et
+              pièces de qualité, choisis avec attention.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               {SOCIAL.map(({ href, label }) => (

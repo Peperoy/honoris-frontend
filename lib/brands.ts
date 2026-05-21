@@ -33,94 +33,42 @@ export type BrandLongDescription = {
   images: string[];
 };
 
-/**
- * Images hero par marque — Unsplash, thématiques et cohérentes avec l'univers de chaque maison.
- * Format : https://images.unsplash.com/photo-<ID>?w=1080&q=80
- */
+type BrandAsset = "hero" | "aesthetic-1" | "aesthetic-2";
+
+/** Chemins locaux vers les visuels officiels de collection (public/images/brands/). */
+function brandAsset(slug: BrandSlug, file: BrandAsset): string {
+  return `/images/brands/${slug}/${file}.webp`;
+}
+
 export const BRAND_IMAGES: Record<BrandSlug, string> = {
-  // Maille italienne fine — pull femme texturé fond neutre
-  "roberto-collina":
-    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1080&q=80",
-  // Parka outdoor premium — manteau femme sur fond hivernal
-  "blonde-8":
-    "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=1080&q=80",
-  // Sportswear nautique — vêtement technique bord de mer
-  rrd: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1080&q=80",
-  // Soins naturels — flacons minimalistes bois et pierre
-  "la-bruket":
-    "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1080&q=80",
-  // Sneakers / chaussures mode — détail semelle et cuir
-  "philippe-model":
-    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1080&q=80",
-  // Accessoires raphia artisanat — sac naturel texturé
-  ibeliv:
-    "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1080&q=80",
-  // Mode féminine fluide — robe legere femme lumière naturelle
-  "bella-dahl":
-    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
-  // Tricot polo maille — pull col roulé élégant
-  montagut:
-    "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
-  // Bijoux fins — bague or pierres fines sur fond sombre
-  "5-octobre":
-    "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1080&q=80",
-  // Mode artisanale italienne — robe femme tissu délicat
-  "forte-forte":
-    "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1080&q=80",
-  // Sac cabas parisien — toile et paillettes lifestyle
-  "vanessa-bruno":
-    "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1080&q=80",
-  // Écharpe cachemire — foulard texturé drapé
-  "faliero-sarti":
-    "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=1080&q=80",
-  // Maroquinerie artisanale — sac cuir souple détail couture
-  "jerome-dreyfuss":
-    "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=1080&q=80",
-  // Pantalon militaire chic — treillis élégant coupe droite
-  masons:
-    "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=1080&q=80",
-  // Denim premium — jean brut détail tissu indigo
-  seven:
-    "https://images.unsplash.com/photo-1542272604-787c3835535d?w=1080&q=80",
-  // T-shirt luxe blanc — basique premium fond épuré
-  "majestic-filatures":
-    "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1080&q=80",
-  // Esprit rock bohème — femme vêtement vintage texturé
-  newtone:
-    "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=1080&q=80",
-  // Cachemire doux — pull moelleux ton neutre lumière chaude
-  "absolut-cachemere":
-    "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=1080&q=80",
-  // Élégance féminine contemporaine — silhouette femme lumière dorée
-  "bella-jones":
-    "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1080&q=80",
-  // Casual chic scandinave — tenue décontractée lumière naturelle
-  "laid-back":
-    "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=1080&q=80",
-  // Mode italienne imprimée — tissu fluide coloré motif
-  momoni:
-    "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=1080&q=80",
-  // Créateur féminin artisanal — pièce unique atelier
-  "lou-andrea":
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1080&q=80",
-  // Chapeau artisanal — bob ou chapeau feutre détail finition
-  "claris-virot":
-    "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=1080&q=80",
-  // Mode parisienne romantique — robe légère imprimée fleur
-  soeur:
-    "https://images.unsplash.com/photo-1585914924626-15adac1e6402?w=1080&q=80",
-  // Plage balnéaire — maillot de bain sable bleu mer
-  "ct-plage":
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1080&q=80",
-  // Minimalisme couleur — tenue ton sur ton neutre épuré
-  tonal:
-    "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1080&q=80",
-  // Urbain new-yorkais — style downtown femme city chic
-  bowery:
-    "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1080&q=80",
-  // Femme moderne affirmée — portrait mode lumière directe
-  "la-nouvelle":
-    "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1080&q=80",
+  "roberto-collina": brandAsset("roberto-collina", "hero"),
+  "blonde-8": brandAsset("blonde-8", "hero"),
+  rrd: brandAsset("rrd", "hero"),
+  "la-bruket": brandAsset("la-bruket", "hero"),
+  "philippe-model": brandAsset("philippe-model", "hero"),
+  ibeliv: brandAsset("ibeliv", "hero"),
+  "bella-dahl": brandAsset("bella-dahl", "hero"),
+  montagut: brandAsset("montagut", "hero"),
+  "5-octobre": brandAsset("5-octobre", "hero"),
+  "forte-forte": brandAsset("forte-forte", "hero"),
+  "vanessa-bruno": brandAsset("vanessa-bruno", "hero"),
+  "faliero-sarti": brandAsset("faliero-sarti", "hero"),
+  "jerome-dreyfuss": brandAsset("jerome-dreyfuss", "hero"),
+  masons: brandAsset("masons", "hero"),
+  seven: brandAsset("seven", "hero"),
+  "majestic-filatures": brandAsset("majestic-filatures", "hero"),
+  newtone: brandAsset("newtone", "hero"),
+  "absolut-cachemere": brandAsset("absolut-cachemere", "hero"),
+  "bella-jones": brandAsset("bella-jones", "hero"),
+  "laid-back": brandAsset("laid-back", "hero"),
+  momoni: brandAsset("momoni", "hero"),
+  "lou-andrea": brandAsset("lou-andrea", "hero"),
+  "claris-virot": brandAsset("claris-virot", "hero"),
+  soeur: brandAsset("soeur", "hero"),
+  "ct-plage": brandAsset("ct-plage", "hero"),
+  tonal: brandAsset("tonal", "hero"),
+  bowery: brandAsset("bowery", "hero"),
+  "la-nouvelle": brandAsset("la-nouvelle", "hero"),
 };
 
 export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
@@ -131,8 +79,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, les pièces Roberto Collina sont sélectionnées pour leur capacité à traverser les saisons sans jamais vieillir. Chaque silhouette traduit un équilibre rare entre tradition artisanale et modernité créative — une garde-robe de caractère, pensée pour durer.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
-      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=1080&q=80",
+      brandAsset("roberto-collina", "aesthetic-1"),
+      brandAsset("roberto-collina", "aesthetic-2"),
     ],
   },
 
@@ -143,8 +91,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, les collections Blonde n°8 proposent des pièces d'extérieur que l'on garde saison après saison — des manteaux à la fois fonctionnels et désirables, qui accompagnent avec élégance les femmes actives dans leur quotidien.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=1080&q=80",
-      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=1080&q=80",
+      brandAsset("blonde-8", "aesthetic-1"),
+      brandAsset("blonde-8", "aesthetic-2"),
     ],
   },
 
@@ -154,10 +102,7 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En 1995, la marque étend son savoir-faire technique à une ligne vestimentaire complète. En 2005, Roberto Ricci ouvre son premier flagship à Forte dei Marmi, puis un showroom de 500 m² dans le quartier de la mode à Milan. Chaque collection emprunte au monde du nautisme sa rigueur fonctionnelle pour l'appliquer à des vêtements urbains et de villégiature.",
       "Chez Honoris Cosa, RRD représente cet équilibre entre performance et élégance décontractée — des pièces techniques aux coupes soignées qui se portent aussi bien en bord de mer qu'en ville, dans la plus pure tradition italienne.",
     ],
-    images: [
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1080&q=80",
-      "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=1080&q=80",
-    ],
+    images: [brandAsset("rrd", "aesthetic-1"), brandAsset("rrd", "aesthetic-2")],
   },
 
   "la-bruket": {
@@ -167,8 +112,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Honoris Cosa a sélectionné L:A BRUKET pour offrir une parenthèse de soin nordique — des rituels complets pour le corps, le visage et les cheveux, présentés dans des flacons au design épuré qui trouvent naturellement leur place dans une salle de bain d'exception.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1080&q=80",
-      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1080&q=80",
+      brandAsset("la-bruket", "aesthetic-1"),
+      brandAsset("la-bruket", "aesthetic-2"),
     ],
   },
 
@@ -179,8 +124,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Philippe Model incarne la chaussure de caractère — celle que l'on reconnaît au premier regard, portée par des femmes qui assument leur singularité avec élégance et une pointe d'avant-garde.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1080&q=80",
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1080&q=80",
+      brandAsset("philippe-model", "aesthetic-1"),
+      brandAsset("philippe-model", "aesthetic-2"),
     ],
   },
 
@@ -191,8 +136,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, IBELIV représente la preuve que la mode peut être belle, authentique et respectueuse — des accessoires chargés d'une âme véritable, qui racontent une histoire et honorent une terre.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=1080&q=80",
-      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1080&q=80",
+      brandAsset("ibeliv", "aesthetic-1"),
+      brandAsset("ibeliv", "aesthetic-2"),
     ],
   },
 
@@ -203,8 +148,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Bella Dahl représente l'élégance sans effort — ces pièces que l'on attrape instinctivement le matin parce qu'elles promettent confort et style pour toute une journée.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1080&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+      brandAsset("bella-dahl", "aesthetic-1"),
+      brandAsset("bella-dahl", "aesthetic-2"),
     ],
   },
 
@@ -215,8 +160,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Montagut incarne le tricot d'exception — des polos, pulls et pièces en maille d'une finesse rare, portés par des femmes et des hommes qui savent reconnaître la qualité au premier toucher.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
-      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1080&q=80",
+      brandAsset("montagut", "aesthetic-1"),
+      brandAsset("montagut", "aesthetic-2"),
     ],
   },
 
@@ -227,8 +172,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, 5 Octobre propose une sélection de bijoux à l'esthétique minimaliste et puissante — des pièces que l'on porte seules ou que l'on accumule, et qui deviennent rapidement indissociables de celles qui les choisissent.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1080&q=80",
-      "https://images.unsplash.com/photo-1549439602-43ebca2327af?w=1080&q=80",
+      brandAsset("5-octobre", "aesthetic-1"),
+      brandAsset("5-octobre", "aesthetic-2"),
     ],
   },
 
@@ -239,8 +184,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Forte Forte représente la mode qui touche — des robes, des tops et des pièces de caractère qui épousent le corps sans le contraindre, et restent dans la garde-robe bien au-delà d'une saison.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1613909671501-f9678ffc1d33?w=1080&q=80",
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1080&q=80",
+      brandAsset("forte-forte", "aesthetic-1"),
+      brandAsset("forte-forte", "aesthetic-2"),
     ],
   },
 
@@ -251,8 +196,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Vanessa Bruno offre ce mélange singulier de légèreté et d'élégance — des pièces et accessoires qui semblent nés naturellement dans une garde-robe parisienne contemporaine.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1589363460779-cd717d2ed8fa?w=1080&q=80",
-      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1080&q=80",
+      brandAsset("vanessa-bruno", "aesthetic-1"),
+      brandAsset("vanessa-bruno", "aesthetic-2"),
     ],
   },
 
@@ -263,8 +208,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Faliero Sarti est synonyme de raffinement discret — des écharpes et accessoires en cachemire travaillé qui transforment une tenue simple en quelque chose d'inoubliable.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1080&q=80",
-      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=1080&q=80",
+      brandAsset("faliero-sarti", "aesthetic-1"),
+      brandAsset("faliero-sarti", "aesthetic-2"),
     ],
   },
 
@@ -275,8 +220,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, les sacs Jérôme Dreyfuss incarnent l'élégance sans effort — des pièces ultra-légères et discrètes qui accompagnent les femmes au quotidien avec une complicité rare.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1589363358751-ab05797e5629?w=1080&q=80",
-      "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=1080&q=80",
+      brandAsset("jerome-dreyfuss", "aesthetic-1"),
+      brandAsset("jerome-dreyfuss", "aesthetic-2"),
     ],
   },
 
@@ -287,8 +232,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Mason's propose des pièces structurées d'une modernité intemporelle — des pantalons, vestes et bermudas qui habillent l'homme avec autorité et décontraction, fidèles à l'esprit de la Dolce Vita ligurienne.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=1080&q=80",
-      "https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=1080&q=80",
+      brandAsset("masons", "aesthetic-1"),
+      brandAsset("masons", "aesthetic-2"),
     ],
   },
 
@@ -299,8 +244,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Seven représente le denim d'exception — celui que l'on porte habillé ou décontracté, avec la certitude d'un vêtement qui allie qualité californienne et sophistication contemporaine.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1542272604-787c3835535d?w=1080&q=80",
-      "https://images.unsplash.com/photo-1591884807235-1dc6c2e148b1?w=1080&q=80",
+      brandAsset("seven", "aesthetic-1"),
+      brandAsset("seven", "aesthetic-2"),
     ],
   },
 
@@ -311,8 +256,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Majestic Filatures est la signature du luxe invisible — ces pièces que l'on porte contre la peau avec une confiance absolue dans leur qualité, leur douceur et leur capacité à traverser les années sans jamais dater.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1080&q=80",
-      "https://images.unsplash.com/photo-1613909671501-f9678ffc1d33?w=1080&q=80",
+      brandAsset("majestic-filatures", "aesthetic-1"),
+      brandAsset("majestic-filatures", "aesthetic-2"),
     ],
   },
 
@@ -323,8 +268,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Newtone habille celles qui assument leur style avec conviction — des femmes qui cherchent dans leurs vêtements une extension naturelle de leur personnalité, pas un costume.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1080&q=80",
-      "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=1080&q=80",
+      brandAsset("newtone", "aesthetic-1"),
+      brandAsset("newtone", "aesthetic-2"),
     ],
   },
 
@@ -335,8 +280,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Absolut Cashmere est une invitation à investir dans l'essentiel — un pull, un cardigan, une écharpe portés avec la certitude d'une qualité irréprochable et d'un style intemporel.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=1080&q=80",
-      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=1080&q=80",
+      brandAsset("absolut-cachemere", "aesthetic-1"),
+      brandAsset("absolut-cachemere", "aesthetic-2"),
     ],
   },
 
@@ -347,8 +292,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Bella Jones s'adresse aux femmes qui savent ce qu'elles veulent : des vêtements beaux, portables, et pensés pour traverser les occasions avec grâce — du bureau à la soirée, du quotidien au week-end.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1080&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+      brandAsset("bella-jones", "aesthetic-1"),
+      brandAsset("bella-jones", "aesthetic-2"),
     ],
   },
 
@@ -359,8 +304,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Laid Back représente le vestiaire de la femme moderne qui fait confiance à sa garde-robe — des pièces solides, belles et reposantes, qui habillent chaque journée avec un naturel élégant.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=1080&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+      brandAsset("laid-back", "aesthetic-1"),
+      brandAsset("laid-back", "aesthetic-2"),
     ],
   },
 
@@ -371,8 +316,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Momoni habille les femmes qui aiment la mode comme on aime la vie — avec passion, légèreté et un goût prononcé pour les belles choses. Des pièces qui font sourire dès qu'on les enfile.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=1080&q=80",
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1080&q=80",
+      brandAsset("momoni", "aesthetic-1"),
+      brandAsset("momoni", "aesthetic-2"),
     ],
   },
 
@@ -383,8 +328,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Lou Andrea propose des silhouettes uniques, pensées pour être portées avec conviction et plaisir, saison après saison.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1080&q=80",
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1080&q=80",
+      brandAsset("lou-andrea", "aesthetic-1"),
+      brandAsset("lou-andrea", "aesthetic-2"),
     ],
   },
 
@@ -395,8 +340,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Claris Virot représente l'accessoire qui fait la tenue — ce chapeau ou ce sac que l'on remarque immédiatement, et qui trahit le goût de celle qui le porte pour les belles choses faites avec soin.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=1080&q=80",
-      "https://images.unsplash.com/photo-1534126511673-b6899657816a?w=1080&q=80",
+      brandAsset("claris-virot", "aesthetic-1"),
+      brandAsset("claris-virot", "aesthetic-2"),
     ],
   },
 
@@ -407,8 +352,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Sœur incarne la mode que l'on partage — des pièces que l'on s'emprunte, que l'on offre, que l'on transmet, et qui racontent à chaque fois une histoire de style et de complicité.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1585914924626-15adac1e6402?w=1080&q=80",
-      "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=1080&q=80",
+      brandAsset("soeur", "aesthetic-1"),
+      brandAsset("soeur", "aesthetic-2"),
     ],
   },
 
@@ -419,8 +364,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, CT Plage prolonge l'esprit des vacances bien au-delà des plages. Des pièces qui vivent aussi en ville, le soir en terrasse, lors d'un week-end en escapade — partout où le soleil invite à s'habiller avec légèreté.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1080&q=80",
-      "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=1080&q=80",
+      brandAsset("ct-plage", "aesthetic-1"),
+      brandAsset("ct-plage", "aesthetic-2"),
     ],
   },
 
@@ -431,8 +376,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, Tonal habille les femmes qui aiment la mode pensée — celles qui construisent leur style avec méthode et sensibilité, et pour qui s'habiller est un vrai plaisir intellectuel autant qu'esthétique.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1080&q=80",
-      "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=1080&q=80",
+      brandAsset("tonal", "aesthetic-1"),
+      brandAsset("tonal", "aesthetic-2"),
     ],
   },
 
@@ -443,8 +388,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "En boutique chez Honoris Cosa, Bowery représente la mode du mouvement — des pièces que l'on porte de la réunion du matin au dîner du soir, sans jamais avoir l'impression de faire des concessions sur le style.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1080&q=80",
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1080&q=80",
+      brandAsset("bowery", "aesthetic-1"),
+      brandAsset("bowery", "aesthetic-2"),
     ],
   },
 
@@ -455,8 +400,8 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       "Chez Honoris Cosa, La Nouvelle incarne cette mode de l'affirmation — des pièces portées avec conviction, qui prennent toute leur dimension sur la femme qui les a choisies parce qu'elles lui ressemblent.",
     ],
     images: [
-      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1080&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1080&q=80",
+      brandAsset("la-nouvelle", "aesthetic-1"),
+      brandAsset("la-nouvelle", "aesthetic-2"),
     ],
   },
 };
