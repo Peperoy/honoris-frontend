@@ -30,9 +30,17 @@ const SITES = {
   "claris-virot": "https://www.clarisvirot.com",
   soeur: "https://www.soeur.fr",
   "ct-plage": "https://ctplage.fr",
-  tonal: "https://tonal.fr",
+  toral: "https://toral-shoes.com",
   bowery: "https://bowery.fr",
   "la-nouvelle": "https://lanouvelle.fr",
+  autry: "https://www.autry-usa.com",
+  "inoui-editions": "https://inoui-editions.com",
+  "knit-ted": "https://knit-ted.com",
+  "les-petits-foulards": "https://lespetitsfoulards.com",
+  "post-co": "https://www.victoire.shop",
+  "mon-dada": "https://mondadacollections.com",
+  "shan-shan": "https://shan-shan.fr",
+  "essentiel-antwerp": "https://www.essentiel-antwerp.com",
 };
 
 const SKIP =

@@ -73,7 +73,7 @@ export default function ContactSection() {
         <div className="mb-14 grid gap-10 md:mb-20 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
             <span className="mb-4 block text-[10px] font-medium uppercase tracking-[0.4em] text-or">
-              Chapitre V — Rendez-vous
+              Chapitre IV — Contact
             </span>
             <h2 className="font-[family-name:var(--font-headline)] text-balance text-4xl leading-tight text-lin md:text-6xl lg:text-7xl">
               Passez nous{" "}
@@ -82,8 +82,7 @@ export default function ContactSection() {
           </div>
 
           <p className="max-w-md text-base font-light leading-relaxed text-lin/65 md:col-span-5 md:text-lg">
-            Une demande particulière ou un avis d&apos;expert&nbsp;?
-            L&apos;équipe Honoris Cosa vous reçoit en boutique ou par message.
+            Une question ? Un conseil ? Une demande particulière ? N'hésitez pas à nous rendre visite ou à nous contacter, l'équipe Honoris est à votre disposition.
           </p>
         </div>
 

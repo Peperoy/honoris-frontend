@@ -24,9 +24,17 @@ export type BrandSlug =
   | "claris-virot"
   | "soeur"
   | "ct-plage"
-  | "tonal"
+  | "toral"
   | "bowery"
-  | "la-nouvelle";
+  | "la-nouvelle"
+  | "autry"
+  | "inoui-editions"
+  | "knit-ted"
+  | "les-petits-foulards"
+  | "post-co"
+  | "mon-dada"
+  | "shan-shan"
+  | "essentiel-antwerp";
 
 export type BrandLongDescription = {
   paragraphs: string[];
@@ -66,9 +74,17 @@ export const BRAND_IMAGES: Record<BrandSlug, string> = {
   "claris-virot": brandAsset("claris-virot", "hero"),
   soeur: brandAsset("soeur", "hero"),
   "ct-plage": brandAsset("ct-plage", "hero"),
-  tonal: brandAsset("tonal", "hero"),
+  toral: brandAsset("toral", "hero"),
   bowery: brandAsset("bowery", "hero"),
   "la-nouvelle": brandAsset("la-nouvelle", "hero"),
+  autry: brandAsset("autry", "hero"),
+  "inoui-editions": brandAsset("inoui-editions", "hero"),
+  "knit-ted": brandAsset("knit-ted", "hero"),
+  "les-petits-foulards": brandAsset("les-petits-foulards", "hero"),
+  "post-co": brandAsset("post-co", "hero"),
+  "mon-dada": brandAsset("mon-dada", "hero"),
+  "shan-shan": brandAsset("shan-shan", "hero"),
+  "essentiel-antwerp": brandAsset("essentiel-antwerp", "hero"),
 };
 
 export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
@@ -229,7 +245,7 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
     paragraphs: [
       "Mason's naît en 1974 en Ligurie, sur la côte méditerranéenne italienne. Fondée par Giorgio Martini, la maison s'est donné une mission unique : réconcilier la rigueur de l'uniforme militaire avec la souplesse de l'élégance à l'italienne. Un mariage de contrastes qui définit son identité depuis plus de 50 ans.",
       "Les collections puisent leur inspiration dans les grandes figures de l'histoire — le Dalaï-Lama, Kennedy, Che Guevara, Indira Gandhi — en cherchant à capturer dans chaque coupe une forme de noblesse fonctionnelle. Les tissus sont résistants, qualitatifs, pensés pour durer. La sobriété est élevée au rang de valeur esthétique.",
-      "En boutique chez Honoris Cosa, Mason's propose des pièces structurées d'une modernité intemporelle — des pantalons, vestes et bermudas qui habillent l'homme avec autorité et décontraction, fidèles à l'esprit de la Dolce Vita ligurienne.",
+      "En boutique chez Honoris Cosa, Mason's propose des pièces structurées d'une modernité intemporelle — des pantalons, vestes et bermudas qui habillent avec autorité et décontraction, fidèles à l'esprit de la Dolce Vita ligurienne.",
     ],
     images: [
       brandAsset("masons", "aesthetic-1"),
@@ -369,15 +385,15 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
     ],
   },
 
-  tonal: {
+  toral: {
     paragraphs: [
-      "Tonal est une marque construite autour d'une philosophie minimaliste et sensorielle : la puissance du ton sur ton, la beauté des matières qui se révèlent dans la subtilité. Chaque collection explore les nuances monochromes et les jeux de textures pour créer des silhouettes à la fois épurées et profondes.",
-      "Les pièces Tonal sont conçues pour se superposer, se combiner, se répondre. La couleur n'est jamais choisie au hasard — chaque nuance est travaillée pour créer des harmonies graphiques et sensorielles. Le résultat est une garde-robe cohérente, raffinée, dans laquelle chaque pièce trouve naturellement sa place.",
-      "Chez Honoris Cosa, Tonal habille les femmes qui aiment la mode pensée — celles qui construisent leur style avec méthode et sensibilité, et pour qui s'habiller est un vrai plaisir intellectuel autant qu'esthétique.",
+      "Toral, c'est la chaussure espagnole qui a du caractère. Fondée en 2012 par Carla et Berna Toral, la maison conjugue tendances et savoir-faire artisanal pour créer des souliers à la personnalité affirmée, entre esprit rock et allure bohème chic.",
+      "Héritière d'une longue expérience familiale dans l'univers de la chaussure, la marque dessine bottes, mocassins, mules, ballerines et sandales fabriqués en Espagne à partir de cuirs italiens. Chaque modèle joue des matières, des couleurs et des textures pour offrir des pièces uniques, à la fois sophistiquées et faciles à vivre. Engagée auprès du Leather Working Group, Toral inscrit sa production dans une démarche plus responsable.",
+      "Chez Honoris Cosa, Toral habille le pied des femmes qui aiment les chaussures qui ont du tempérament — des modèles que l'on remarque, qui s'accordent à une humeur autant qu'à une tenue, et qui traversent les saisons sans se démoder.",
     ],
     images: [
-      brandAsset("tonal", "aesthetic-1"),
-      brandAsset("tonal", "aesthetic-2"),
+      brandAsset("toral", "aesthetic-1"),
+      brandAsset("toral", "aesthetic-2"),
     ],
   },
 
@@ -402,6 +418,102 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
     images: [
       brandAsset("la-nouvelle", "aesthetic-1"),
       brandAsset("la-nouvelle", "aesthetic-2"),
+    ],
+  },
+
+  autry: {
+    paragraphs: [
+      "Autry, c'est l'esprit du sport américain des années 80 réinterprété avec un savoir-faire européen. Née à Dallas en 1982 et relancée en Italie en 2019, la marque a fait de la sneaker rétro un classique intemporel, reconnaissable à son drapeau américain et à sa semelle contrastée.",
+      "À l'origine plébiscitée dans le tennis — sa Medalist fut élue meilleure chaussure en 1985 — Autry renaît sous l'impulsion de passionnés qui réunissent nostalgie nord-américaine et exigence italienne. Les modèles, en cuir nubuck et matières premium, cultivent des lignes épurées et un esprit vintage assumé qui s'accorde à toutes les silhouettes.",
+      "En boutique chez Honoris Cosa, Autry incarne la sneaker que l'on porte au quotidien — confortable, élégante et facile à associer, elle apporte une touche décontractée et solaire à une garde-robe féminine contemporaine.",
+    ],
+    images: [
+      brandAsset("autry", "aesthetic-1"),
+      brandAsset("autry", "aesthetic-2"),
+    ],
+  },
+
+  "inoui-editions": {
+    paragraphs: [
+      "Chez Inouï Éditions, le foulard n'est jamais un simple accessoire : c'est un fragment d'histoire, un geste de style, un support d'expression. Depuis plus de quinze ans, la maison imagine des foulards illustrés où le dessin rencontre le textile.",
+      "Les motifs — mondes imaginaires peuplés d'animaux, de paysages et de scènes libres — sont dessinés à la main par les artistes maison, dans le studio français de la marque, puis confiés à un atelier historique en Inde qui perpétue un savoir-faire textile ancestral. Soie, laine, coton ou cachemire : chaque matière révèle la lumière et les nuances du motif à sa façon.",
+      "Chez Honoris Cosa, Inouï Éditions apporte cette touche d'allure qui transforme une tenue — un carré noué au cou, glissé dans les cheveux ou à l'anse d'un sac, qui raconte à chaque fois un regard sensible sur le monde.",
+    ],
+    images: [
+      brandAsset("inoui-editions", "aesthetic-1"),
+      brandAsset("inoui-editions", "aesthetic-2"),
+    ],
+  },
+
+  "knit-ted": {
+    paragraphs: [
+      "Knit-ted fait de la maille un art de l'élégance facile. La marque crée des vêtements pensés pour envelopper la femme, sublimer sa silhouette et révéler sa beauté naturelle — pour avancer dans sa journée avec assurance et légèreté.",
+      "Spécialiste de la maille, Knit-ted travaille des matières douces et des coupes fluides qui se drapent autour du corps sans jamais le contraindre. Les tons naturels, les textures légères et les silhouettes décontractées composent un vestiaire à la fois confortable et raffiné, fait pour les jours qui demandent du bien-être avec une pointe d'élégance.",
+      "En boutique chez Honoris Cosa, Knit-ted habille les femmes qui aiment se sentir bien dans leurs vêtements — des pièces en maille faciles à vivre, féminines et chaleureuses, que l'on enfile et que l'on ne quitte plus.",
+    ],
+    images: [
+      brandAsset("knit-ted", "aesthetic-1"),
+      brandAsset("knit-ted", "aesthetic-2"),
+    ],
+  },
+
+  "les-petits-foulards": {
+    paragraphs: [
+      "Les Petits Foulards, c'est une invitation au voyage. Imaginés par Agathe et Lorenzo, leurs foulards et paréos en soie évoquent chacun une destination — Zanzibar, Biarritz, Marseille, New York — pour transformer un accessoire en fenêtre vers l'ailleurs.",
+      "Chaque motif est dessiné pour capturer l'essence d'un lieu, puis confectionné avec soin en Italie, dans une entreprise familiale au savoir-faire transmis de génération en génération. Les étoffes, en soie 100 % certifiée Oeko-Tex, sont choisies dans le respect de l'environnement pour offrir une qualité durable et un luxe accessible.",
+      "Chez Honoris Cosa, Les Petits Foulards ajoutent une note d'évasion et de couleur — un carré à nouer autour du cou, dans les cheveux ou au poignet, qui suit l'humeur et accompagne toutes les saisons.",
+    ],
+    images: [
+      brandAsset("les-petits-foulards", "aesthetic-1"),
+      brandAsset("les-petits-foulards", "aesthetic-2"),
+    ],
+  },
+
+  "post-co": {
+    paragraphs: [
+      "Chez Post & Co, on ne plaisante pas avec le cuir. Née en Toscane, région d'excellence pour l'artisanat du cuir et de la chaussure, la maison crée ceintures, sacs et souliers façonnés à la main avec des cuirs vieillis et patinés.",
+      "Chaque collection s'inspire de l'environnement toscan : les couleurs des champs d'été et des récoltes d'automne, les portes anciennes usées par le temps, les détails qui relient le tout. Du cuir de vachette pleine fleur aux peaux les plus précieuses, les artisans appliquent des techniques de finition hautement qualifiées pour rendre chaque pièce luxueusement unique.",
+      "En boutique chez Honoris Cosa, Post & Co incarne l'accessoire qui dit le goût sans le crier — une ceinture, un sac, une paire de souliers en cuir d'exception, pensés pour durer et se patiner avec le temps.",
+    ],
+    images: [
+      brandAsset("post-co", "aesthetic-1"),
+      brandAsset("post-co", "aesthetic-2"),
+    ],
+  },
+
+  "mon-dada": {
+    paragraphs: [
+      "Mon Dada n'est pas une simple marque de bougies : c'est une philosophie de design sensoriel. Depuis 2019, cette maison belge coule à la main des bougies parfumées dans des contenants en béton minimalistes, fruit d'une obsession pour l'artisanat et le beau geste.",
+      "Entièrement fabriquées en Belgique par une équipe de femmes, les bougies Mon Dada associent des cires mélangées de haute qualité aux parfums les plus rares de Grasse. Le béton, coulé puis façonné à l'atelier, devient un objet de décoration que l'on garde et réutilise — une démarche durable où rien n'est laissé au hasard, du design à la fragrance.",
+      "Chez Honoris Cosa, Mon Dada prolonge l'art de vivre au-delà du vestiaire — des bougies et diffuseurs au design épuré qui parfument la maison et trouvent naturellement leur place dans un intérieur soigné.",
+    ],
+    images: [
+      brandAsset("mon-dada", "aesthetic-1"),
+      brandAsset("mon-dada", "aesthetic-2"),
+    ],
+  },
+
+  "shan-shan": {
+    paragraphs: [
+      "SHANSHAN marie la beauté du charme ancien à l'élégance intemporelle de Paris. Née dans la capitale avec beaucoup d'amour, la marque crée des bijoux en or mat dont la finition singulière donne à chaque pièce une allure vintage et précieuse.",
+      "Façonnés à la main à partir de laiton et d'or recyclé 18 carats, les bijoux SHANSHAN s'ornent de perles d'eau douce et de pierres semi-précieuses. La finition or mat emblématique, mate et lumineuse à la fois, signe des créations délicates qui racontent chacune leur propre histoire.",
+      "Chez Honoris Cosa, Shan Shan apporte la touche de bijou qui fait la différence — boucles d'oreilles, colliers et pièces à porter seules ou à accumuler, qui se glissent avec grâce dans une garde-robe féminine.",
+    ],
+    images: [
+      brandAsset("shan-shan", "aesthetic-1"),
+      brandAsset("shan-shan", "aesthetic-2"),
+    ],
+  },
+
+  "essentiel-antwerp": {
+    paragraphs: [
+      "Essentiel Antwerp a vu le jour en 1999 avec une collection de t-shirts fière et bruyante, en guise d'antidote au paysage monochrome de la mode. La marque belge est devenue une référence du prêt-à-porter féminin, célèbre pour ses imprimés signature et ses associations de couleurs audacieuses.",
+      "Fondée par Esfan Eghtessadi, fils de styliste élevé au milieu des tissus, et Inge Onsea, grande voyageuse revenue avec un amour des couleurs et des paillettes, la maison cultive un esprit joyeux et intrépide. Robes graphiques, mailles désirables, denim et vêtements d'extérieur : chaque collection mêle exubérance et élégance, avec une attention constante portée à la coupe et à la qualité.",
+      "En boutique chez Honoris Cosa, Essentiel Antwerp habille les femmes libres et solaires qui aiment jouer avec la couleur et l'imprimé — des pièces vibrantes et contemporaines qui se portent avec autant d'aisance au quotidien qu'en soirée.",
+    ],
+    images: [
+      brandAsset("essentiel-antwerp", "aesthetic-1"),
+      brandAsset("essentiel-antwerp", "aesthetic-2"),
     ],
   },
 };
@@ -433,39 +545,55 @@ export const BRAND_LABELS: Record<BrandSlug, string> = {
   "claris-virot": "Claris Virot",
   soeur: "Sœur",
   "ct-plage": "CT Plage",
-  tonal: "Tonal",
+  toral: "Toral",
   bowery: "Bowery",
   "la-nouvelle": "La Nouvelle",
+  autry: "Autry",
+  "inoui-editions": "Inouï Éditions",
+  "knit-ted": "Knit-ted",
+  "les-petits-foulards": "Les Petits Foulards",
+  "post-co": "Post & Co",
+  "mon-dada": "Mon Dada",
+  "shan-shan": "Shan Shan",
+  "essentiel-antwerp": "Essentiel Antwerp",
 };
 
-/** Ordre d'affichage dans la grille. */
+/** Ordre d'affichage dans la grille — alphabétique par label. */
 export const BRAND_ORDER: BrandSlug[] = [
-  "roberto-collina",
-  "blonde-8",
-  "rrd",
-  "la-bruket",
-  "philippe-model",
-  "ibeliv",
-  "bella-dahl",
-  "montagut",
   "5-octobre",
-  "forte-forte",
-  "vanessa-bruno",
-  "faliero-sarti",
-  "jerome-dreyfuss",
-  "masons",
-  "seven",
-  "majestic-filatures",
-  "newtone",
   "absolut-cachemere",
+  "autry",
+  "bella-dahl",
   "bella-jones",
-  "laid-back",
-  "momoni",
-  "lou-andrea",
-  "claris-virot",
-  "soeur",
-  "ct-plage",
-  "tonal",
+  "blonde-8",
   "bowery",
+  "claris-virot",
+  "ct-plage",
+  "essentiel-antwerp",
+  "faliero-sarti",
+  "forte-forte",
+  "ibeliv",
+  "inoui-editions",
+  "jerome-dreyfuss",
+  "knit-ted",
+  "la-bruket",
   "la-nouvelle",
+  "laid-back",
+  "les-petits-foulards",
+  "lou-andrea",
+  "majestic-filatures",
+  "masons",
+  "momoni",
+  "mon-dada",
+  "montagut",
+  "newtone",
+  "philippe-model",
+  "post-co",
+  "roberto-collina",
+  "rrd",
+  "seven",
+  "shan-shan",
+  "soeur",
+  "toral",
+  "vanessa-bruno",
 ];

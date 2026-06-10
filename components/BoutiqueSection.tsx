@@ -11,16 +11,16 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const CARDS = [
   {
     src: IMG.boutiqueAccessories,
-    alt: "Accessoires",
-    eyebrow: "Catégorie 02",
-    label: "Accessoires",
+    alt: "L'univers accessoires",
+    eyebrow: " ",
+    label: "L'univers accessoires",
     delay: 0.1,
   },
   {
     src: IMG.boutiqueLifestyle,
-    alt: "Art de vivre",
-    eyebrow: "Catégorie 03",
-    label: "Art de Vivre",
+    alt: "L'univers lifestyle",
+    eyebrow: "",
+    label: "L'univers lifestyle",
     delay: 0.2,
   },
 ];
@@ -46,15 +46,14 @@ export default function BoutiqueSection() {
               </span>
             </Reveal>
             <h2 className="font-[family-name:var(--font-headline)] text-balance text-4xl leading-tight text-lin md:text-6xl lg:text-7xl">
-              Une sélection{" "}
-              <span className="italic text-or">qui dit tout.</span>
+              De la sélection{" "}
+              <span className="italic text-or">au lifestyle.</span>
             </h2>
           </div>
 
           <Reveal from="up" delay={0.15} className="lg:col-span-5">
             <p className="max-w-md text-base leading-relaxed text-lin/70 md:text-lg">
-              Du prêt-à-porter aux accessoires et à l&apos;art de vivre — chaque
-              catégorie raconte une humeur et une attitude.
+              Une sélection élégante et raffinée, choisie avec soin par notre équipe. Un univers de prêt-à-porter, d'accessoires et de lifestyle.
             </p>
             <a
               href="#contact"
@@ -88,15 +87,9 @@ export default function BoutiqueSection() {
               />
               <div className="absolute inset-x-0 bottom-0 z-[1] flex items-end justify-between gap-6 p-6 md:p-10">
                 <div className="flex flex-col gap-3">
-                  <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-or/85">
-                    Catégorie 01
-                  </span>
                   <h3 className="font-[family-name:var(--font-headline)] text-3xl italic text-lin md:text-5xl">
-                    Lignes architecturales
+                    L'univers prêt-à-porter
                   </h3>
-                  <p className="max-w-md text-sm font-light leading-relaxed text-lin/65 md:text-base">
-                    Prêt-à-porter — silhouettes contemporaines.
-                  </p>
                 </div>
                 <span
                   aria-hidden
@@ -107,7 +100,6 @@ export default function BoutiqueSection() {
               </div>
               <div className="absolute left-6 top-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-lin/60 md:left-10 md:top-10">
                 <span className="size-1.5 animate-pulse rounded-full bg-or" />
-                Nouveau
               </div>
             </div>
           </motion.div>
@@ -154,19 +146,14 @@ export default function BoutiqueSection() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-start gap-6 border-t border-lin/10 pt-10 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-md text-sm font-light text-lin/55">
-            Sélection mise à jour chaque mois — privilèges réservés aux
-            clientes de la lettre.
+        <blockquote className="mt-12 border-t border-lin/10 pt-10 md:pt-14">
+          <p className="font-[family-name:var(--font-headline)] text-2xl font-bold leading-tight text-lin md:text-4xl lg:text-5xl">
+            &ldquo;Fashion fades, style is eternal&rdquo;
           </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-lin/20 px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] text-lin transition-colors hover:border-lin hover:bg-lin hover:text-encre"
-          >
-            S&apos;inscrire à la lettre
-            <ArrowUpRight className="size-4" aria-hidden />
-          </a>
-        </div>
+          <cite className="mt-4 block text-sm font-medium not-italic tracking-[0.2em] text-or uppercase md:text-base">
+            Yves Saint Laurent
+          </cite>
+        </blockquote>
       </div>
     </section>
   );

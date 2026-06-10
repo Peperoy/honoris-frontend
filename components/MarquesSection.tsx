@@ -233,7 +233,7 @@ export default function MarquesSection() {
               </h2>
             </div>
             <p className="max-w-md text-base font-light leading-relaxed text-secondary md:col-span-5 md:text-lg">
-              Vingt-huit marques — cliquez sur une carte pour en savoir plus.
+              Cliquez sur une marque pour décourvrir son univers.
             </p>
           </div>
         </div>

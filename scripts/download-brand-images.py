@@ -142,10 +142,10 @@ BRAND_SOURCES: dict[str, dict[str, str]] = {
         "aesthetic1": "https://www.ct-plage.com/wp/wp-content/uploads/2026/02/26ssc-Home-thumb-827x1240.jpg",
         "aesthetic2": "https://www.ct-plage.com/wp/wp-content/uploads/2026/02/26ssc-Home-thumb-827x1240.jpg",
     },
-    "tonal": {
-        "hero": "https://media.modz.fr/pictures/2026/05-mai/92685/modele3/92685_137.jpg?func=fit&w=1200",
-        "aesthetic1": "https://media.modz.fr/pictures/2026/05-mai/92685/modele3/92685_057.jpg?func=fit&w=1200",
-        "aesthetic2": "https://media.modz.fr/pictures/2025/10-octobre/73132/modele3/73132_005.jpg?func=fit&w=1200",
+    "toral": {
+        "hero": "https://toral-shoes.com/cdn/shop/files/loafers-toral-01_1600x.jpg?v=1767962821",
+        "aesthetic1": "https://toral-shoes.com/cdn/shop/files/booties-toral-01_1600x.jpg?v=1767962818",
+        "aesthetic2": "https://toral-shoes.com/cdn/shop/files/boots-toral-01_1600x.jpg?v=1767962816",
     },
     "bowery": {
         "hero": "https://www.bowery-nyc.com/cdn/shop/files/Sfondo_1.jpg?v=1774357846&width=1920",
@@ -156,6 +156,46 @@ BRAND_SOURCES: dict[str, dict[str, str]] = {
         "hero": "https://media.modz.fr/pictures/2025/10-octobre/74457/modele3/74457_025.jpg?func=fit&w=1200",
         "aesthetic1": "https://media.modz.fr/pictures/2025/6398/modele3/6398520_1.jpg?func=fit&w=1200",
         "aesthetic2": "https://media.modz.fr/pictures/2025/6398/modele3/6398515_1.jpg?func=fit&w=1200",
+    },
+    "autry": {
+        "hero": "https://cdn.shopify.com/s/files/1/0751/2837/files/AUT261WWLWUJ02-251_1_863baceb-80f7-446d-a35b-cb0c0f6b0687.webp?width=1200",
+        "aesthetic1": "https://cdn.shopify.com/s/files/1/0751/2837/files/AUT261AULWOC01-010_1_98f40414-70d5-4ae4-b2b7-10ba1543d7fb.webp?width=1200",
+        "aesthetic2": "https://cdn.shopify.com/s/files/1/0751/2837/files/AUT261WWLWUT39-054_1_6f259fae-ee21-43b9-b68c-ef4d0d415f33.webp?width=1200",
+    },
+    "inoui-editions": {
+        "hero": "https://cdn.shopify.com/s/files/1/0617/5188/5990/files/ET231CR00_1.jpg?v=1765198286&width=1400",
+        "aesthetic1": "https://cdn.shopify.com/s/files/1/0617/5188/5990/files/CA23NEP01_1.jpg?v=1764978238&width=1200",
+        "aesthetic2": "https://cdn.shopify.com/s/files/1/0617/5188/5990/files/CA23PA01_1.jpg?v=1764941334&width=1200",
+    },
+    "knit-ted": {
+        "hero": "https://knit-ted.com/cdn/shop/files/KNITTED_SUZOR_MG_3366_f95e6618-a9c3-45ba-85b0-e3738a8e097c.jpg?width=1400",
+        "aesthetic1": "https://knit-ted.com/cdn/shop/files/KNITTED_HQ0941.jpg?width=1400",
+        "aesthetic2": "https://knit-ted.com/cdn/shop/files/261P099_251_001_1.jpg?width=1200",
+    },
+    "les-petits-foulards": {
+        "hero": "https://cdn.shopify.com/s/files/1/0702/3001/6268/files/DSC07022.jpg?v=1765893264&width=1400",
+        "aesthetic1": "https://cdn.shopify.com/s/files/1/0702/3001/6268/files/DSC05555.jpg?v=1767625892&width=1400",
+        "aesthetic2": "https://cdn.shopify.com/s/files/1/0702/3001/6268/files/LPF-Leo.jpg?v=1760517878&width=1200",
+    },
+    "post-co": {
+        "hero": "https://cdn.shopify.com/s/files/1/0616/6187/2315/files/B765CE01-UUU-1.jpg?v=1758205783&width=1400",
+        "aesthetic1": "https://cdn.shopify.com/s/files/1/0616/6187/2315/files/B765CE02-COF-1.jpg?v=1758205783&width=1200",
+        "aesthetic2": "https://cdn.shopify.com/s/files/1/0616/6187/2315/files/B765CE02-KAK-1.jpg?v=1758205783&width=1200",
+    },
+    "mon-dada": {
+        "hero": "https://mondadacollections.com/cdn/shop/collections/Mondada-location-2335.jpg?v=1697131485&width=1400",
+        "aesthetic1": "https://mondadacollections.com/cdn/shop/files/174A7328.jpg?width=1400",
+        "aesthetic2": "https://mondadacollections.com/cdn/shop/files/174A7438.jpg?width=1400",
+    },
+    "shan-shan": {
+        "hero": "https://shan-shan.fr/cdn/shop/files/K4P4101_2.jpg?width=1400",
+        "aesthetic1": "https://shan-shan.fr/cdn/shop/files/COUVERTURE_SITE_KUM_SHAN_5.png?width=1400",
+        "aesthetic2": "https://shan-shan.fr/cdn/shop/files/CHOOSEVISUELSoct25_5.jpg?width=1200",
+    },
+    "essentiel-antwerp": {
+        "hero": "https://api.essentiel-antwerp.com/media/catalog/category/Navigatie_shop_spring2026.jpg",
+        "aesthetic1": "https://cdn.builder.io/api/v1/image/assets%2F661980337514468f8025436cda38935b%2F0937101882694990b4042b5834c48529?format=jpeg&width=1600",
+        "aesthetic2": "https://api.essentiel-antwerp.com/media/catalog/category/BUILDER_DROPDOWNIMAGE_3.jpg",
     },
 }
 
@@ -214,7 +254,11 @@ def main() -> int:
     failed: list[str] = []
     ok = 0
 
-    for slug, sources in BRAND_SOURCES.items():
+    only = set(sys.argv[1:])
+    sources_iter = (
+        (s, src) for s, src in BRAND_SOURCES.items() if not only or s in only
+    )
+    for slug, sources in sources_iter:
         brand_dir = BRANDS_DIR / slug
         brand_dir.mkdir(parents=True, exist_ok=True)
 

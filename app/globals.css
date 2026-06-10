@@ -134,3 +134,9 @@
     animation: none;
   }
 }
+
+.behold-feed behold-widget {
+  display: block;
+  width: 100%;
+  height: auto;
+}
