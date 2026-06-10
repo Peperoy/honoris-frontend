@@ -15,25 +15,19 @@ export default function HeroSection() {
 
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
 
+  // Safari : React n'applique pas toujours `muted` sur le DOM, ce qui bloque
+  // l'autoplay. On force la propriété puis on relance la lecture.
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     video.muted = true;
-    video.defaultMuted = true;
+    const play = () => video.play().catch(() => undefined);
 
-    const tryPlay = () => {
-      void video.play().catch(() => undefined);
-    };
+    if (video.readyState >= 2) play();
+    else video.addEventListener("loadeddata", play, { once: true });
 
-    tryPlay();
-    video.addEventListener("loadeddata", tryPlay);
-    video.addEventListener("canplay", tryPlay);
-
-    return () => {
-      video.removeEventListener("loadeddata", tryPlay);
-      video.removeEventListener("canplay", tryPlay);
-    };
+    return () => video.removeEventListener("loadeddata", play);
   }, []);
 
   return (
@@ -57,10 +51,8 @@ export default function HeroSection() {
           loop
           playsInline
           preload="auto"
-          disablePictureInPicture
-          aria-hidden
         >
-          <source src="/hero.mp4" type="video/mp4" />
+          <source src="/hero.MP4" type="video/mp4" />
         </video>
       </motion.div>
       <div
