@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 
 const NAV = [
+  { href: "#esprit", label: "L'Esprit" },
   { href: "#boutique", label: "La Boutique" },
   { href: "#marques", label: "Nos Marques" },
-  { href: "#esprit", label: "L'Esprit" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
@@ -91,8 +93,13 @@ function SocialIcon({ id }: { id: (typeof SOCIAL)[number]["label"] }) {
   );
 }
 
+function sectionHref(hash: string, pathname: string) {
+  return pathname === "/" ? hash : `/${hash}`;
+}
+
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const closeMenu = useCallback(() => setOpen(false), []);
 
@@ -105,7 +112,7 @@ export default function SiteHeader() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
       >
-        <a href="#" className="relative block h-6 w-40 shrink-0 md:h-7 md:w-48">
+        <Link href="/" className="relative block h-6 w-40 shrink-0 md:h-7 md:w-48">
           <Image
             src="/images/logo-honoriscosa.png"
             alt="HONORISCOSA."
@@ -114,12 +121,12 @@ export default function SiteHeader() {
             sizes="192px"
             priority
           />
-        </a>
+        </Link>
         <div className="hidden items-center gap-12 lg:flex">
           {NAV.map((item, i) => (
             <motion.a
               key={item.href}
-              href={item.href}
+              href={sectionHref(item.href, pathname)}
               className="relative text-[10px] font-semibold uppercase tracking-[var(--letter-widest-editorial)] text-lin transition-colors duration-500 hover:text-or after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-or after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.22,1,0.36,1)] hover:after:scale-x-100"
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -190,7 +197,7 @@ export default function SiteHeader() {
             {NAV.map((item, i) => (
               <motion.a
                 key={item.href}
-                href={item.href}
+                href={sectionHref(item.href, pathname)}
                 className="text-[11px] font-semibold uppercase tracking-[var(--letter-widest-editorial)] text-lin transition-colors duration-500 hover:text-or"
                 onClick={closeMenu}
                 initial={{ opacity: 0, y: 10 }}

@@ -1,9 +1,14 @@
 "use client";
 
-import BeholdWidget from "@behold/react";
+import dynamic from "next/dynamic";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/instagram";
 
 const BEHOLD_FEED_ID = "XuM9RJvsdTObUWLNIe9n";
+
+const BeholdWidget = dynamic(
+  () => import("@behold/react").then((mod) => mod.default),
+  { ssr: false },
+);
 
 function InstagramIcon({ className }: { className?: string }) {
   return (

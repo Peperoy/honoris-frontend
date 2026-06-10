@@ -1,6 +1,7 @@
 export type BrandSlug =
   | "roberto-collina"
   | "blonde-8"
+  | "bord-de-leau"
   | "rrd"
   | "la-bruket"
   | "philippe-model"
@@ -51,6 +52,7 @@ function brandAsset(slug: BrandSlug, file: BrandAsset): string {
 export const BRAND_IMAGES: Record<BrandSlug, string> = {
   "roberto-collina": brandAsset("roberto-collina", "hero"),
   "blonde-8": brandAsset("blonde-8", "hero"),
+  "bord-de-leau": brandAsset("bord-de-leau", "hero"),
   rrd: brandAsset("rrd", "hero"),
   "la-bruket": brandAsset("la-bruket", "hero"),
   "philippe-model": brandAsset("philippe-model", "hero"),
@@ -516,12 +518,25 @@ export const LONG_DESCRIPTIONS: Record<BrandSlug, BrandLongDescription> = {
       brandAsset("essentiel-antwerp", "aesthetic-2"),
     ],
   },
+
+  "bord-de-leau": {
+    paragraphs: [
+      "Bord de l'Eau est un studio de design grec qui perpétue une tradition familiale de trois générations de joailliers. La maison fait vivre cet héritage artisanal en lui donnant une expression contemporaine, industrielle et minimaliste.",
+      "Bijoux et objets décoratifs naissent de formes naturelles, de géométries épurées et de couleurs inspirées des symboles populaires et des peintures enfantines. Métaux, couleurs acryliques et résine se mêlent dans des créations majoritairement faites main, pensées avec des matières fines pour soi et pour ses espaces personnels.",
+      "Chez Honoris Cosa, Bord de l'Eau apporte une touche de poésie et de couleur au-delà du vestiaire — des bijoux et objets singuliers qui trouvent naturellement leur place dans une garde-robe comme dans un intérieur soigné.",
+    ],
+    images: [
+      brandAsset("bord-de-leau", "aesthetic-1"),
+      brandAsset("bord-de-leau", "aesthetic-2"),
+    ],
+  },
 };
 
 /** Libellés affichés dans la grille « Nos marques ». */
 export const BRAND_LABELS: Record<BrandSlug, string> = {
   "roberto-collina": "Roberto Collina",
   "blonde-8": "Blonde n°8",
+  "bord-de-leau": "Bord de l'Eau",
   rrd: "RRD",
   "la-bruket": "L:A BRUKET",
   "philippe-model": "Philippe Model",
@@ -566,6 +581,7 @@ export const BRAND_ORDER: BrandSlug[] = [
   "bella-dahl",
   "bella-jones",
   "blonde-8",
+  "bord-de-leau",
   "bowery",
   "claris-virot",
   "ct-plage",

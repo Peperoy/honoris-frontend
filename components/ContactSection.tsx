@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { LEGAL_PAGES } from "@/lib/legal";
 import {
   ArrowUpRight,
   Check,
@@ -51,9 +53,11 @@ const ROWS = [
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [consentChecked, setConsentChecked] = useState(false);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!consentChecked) return;
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
   }
@@ -228,13 +232,36 @@ export default function ContactSection() {
               />
             </div>
 
+            <label className="relative flex cursor-pointer items-start gap-3">
+              <input
+                type="checkbox"
+                name="data-consent"
+                required
+                checked={consentChecked}
+                onChange={(e) => setConsentChecked(e.target.checked)}
+                className="mt-0.5 size-4 shrink-0 accent-or"
+              />
+              <span className="text-xs font-light leading-relaxed text-secondary">
+                En soumettant ce formulaire, j&apos;accepte que les informations
+                saisies (nom, adresse e-mail, sujet et message) soient utilisées
+                par HO.CO.VA. pour traiter ma demande et me recontacter.{" "}
+                <Link
+                  href={LEGAL_PAGES.confidentialite}
+                  className="text-encre underline decoration-or/50 underline-offset-2 transition-colors hover:text-or"
+                >
+                  Politique de confidentialité
+                </Link>
+              </span>
+            </label>
+
             <div className="relative flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-[10px] uppercase tracking-[0.3em] text-secondary">
                 Réponse sous 24h
               </p>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-encre px-8 py-3 text-[11px] font-medium uppercase tracking-[0.28em] text-lin transition-colors hover:bg-or hover:text-encre"
+                disabled={!consentChecked}
+                className="inline-flex items-center gap-2 rounded-full bg-encre px-8 py-3 text-[11px] font-medium uppercase tracking-[0.28em] text-lin transition-colors hover:bg-or hover:text-encre disabled:cursor-not-allowed disabled:opacity-45"
               >
                 <AnimatePresence mode="wait" initial={false}>
                   {submitted ? (

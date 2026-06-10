@@ -18,6 +18,9 @@ const jost = Jost({
   display: "swap",
 });
 
+const googleSiteVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   title: {
     default: "HONORISCOSA. | Boutique de Luxe Valenciennes",
@@ -25,6 +28,9 @@ export const metadata: Metadata = {
   },
   description:
     "Honoriscosa — boutique multimarques à Valenciennes. Vêtements, accessoires et marques de qualité, choisis avec attention.",
+  ...(googleSiteVerification
+    ? { verification: { google: googleSiteVerification } }
+    : {}),
   openGraph: {
     title: "HONORISCOSA. | Boutique de Luxe Valenciennes",
     description:

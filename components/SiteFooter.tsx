@@ -5,22 +5,28 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { MapPin, Phone } from "lucide-react";
+import { useCookieConsent } from "@/components/CookieConsentProvider";
+import { LEGAL_PAGES } from "@/lib/legal";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const NAV_LINKS = [
   { href: "/", label: "Accueil" },
+  { href: "#esprit", label: "L'Esprit" },
   { href: "#boutique", label: "La Boutique" },
   { href: "#marques", label: "Nos Marques" },
-  { href: "#esprit", label: "L'Esprit" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
 const LEGAL_LINKS = [
-  { href: "#", label: "Mentions légales" },
-  { href: "#", label: "Confidentialité" },
-  { href: "#", label: "Cookies" },
+  { href: LEGAL_PAGES.mentionsLegales, label: "Mentions légales" },
+  { href: LEGAL_PAGES.confidentialite, label: "Confidentialité" },
+  { href: LEGAL_PAGES.cookies, label: "Cookies" },
 ] as const;
+
+function sectionHref(hash: string, pathname: string) {
+  return pathname === "/" ? hash : `/${hash}`;
+}
 
 const SOCIAL = [
   {
@@ -116,6 +122,7 @@ function scrollToTop() {
 
 export default function SiteFooter() {
   const pathname = usePathname();
+  const { openPreferences } = useCookieConsent();
 
   return (
     <footer className="w-full bg-encre px-4 py-14 text-lin md:px-16 md:py-16">
@@ -188,7 +195,10 @@ export default function SiteFooter() {
                         {item.label}
                       </Link>
                     ) : item.href.startsWith("#") ? (
-                      <a href={item.href} className={navLinkClass}>
+                      <a
+                        href={sectionHref(item.href, pathname)}
+                        className={navLinkClass}
+                      >
                         {item.label}
                       </a>
                     ) : (
@@ -278,23 +288,32 @@ export default function SiteFooter() {
             </span>
             <span>Tous droits réservés.</span>
           </p>
-          <nav
-            aria-label="Mentions légales"
-            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-end"
-          >
-            {LEGAL_LINKS.map((item, i) => (
-              <span key={item.label} className="contents">
-                {i > 0 ? (
-                  <span className="hidden text-lin/25 sm:inline" aria-hidden>
-                    ·
-                  </span>
-                ) : null}
-                <a href={item.href} className={legalLinkClass}>
-                  {item.label}
-                </a>
-              </span>
-            ))}
-          </nav>
+          <div className="flex flex-col items-center gap-2 md:items-end">
+            <nav
+              aria-label="Mentions légales"
+              className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-end"
+            >
+              {LEGAL_LINKS.map((item, i) => (
+                <span key={item.label} className="contents">
+                  {i > 0 ? (
+                    <span className="hidden text-lin/25 sm:inline" aria-hidden>
+                      ·
+                    </span>
+                  ) : null}
+                  <Link href={item.href} className={legalLinkClass}>
+                    {item.label}
+                  </Link>
+                </span>
+              ))}
+            </nav>
+            <button
+              type="button"
+              onClick={openPreferences}
+              className="text-xs text-lin/40 transition-colors hover:text-lin/70"
+            >
+              Gérer mes cookies
+            </button>
+          </div>
         </motion.div>
       </div>
     </footer>
