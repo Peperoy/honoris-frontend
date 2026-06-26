@@ -10,18 +10,18 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const PILLARS = [
   {
     n: "01",
-    title: "La sélection exigeante",
-    body: "Une sélection assumée et désirable, qu'on aime porter et qu'on a plaisir à vous proposer.",
+    title: "Une sélection pensée avec exigence",
+    body: "Chaque marque, chaque pièce et chaque détail sont choisis avec une seule intention : vous proposer des collections qui allient qualité, élégance et personnalité. Une sélection sincère, guidée par le goût plus que par les tendances.",
   },
   {
     n: "02",
-    title: "L'univers",
-    body: "Un style contemporain et raffiné, avec des pièces intemporelles que l'on garde longtemps.",
+    title: "Un univers qui inspire",
+    body: "Honoris Cosa est un lieu où le prêt-à-porter, les accessoires et la beauté se rencontrent naturellement. Un univers raffiné, contemporain et intemporel, imaginé pour que chacun s'y sente bien.",
   },
   {
     n: "03",
-    title: "Le conseil",
-    body: "On vous reçoit avec sincérité, on conseille avec exigence, et on prend plaisir à partager ce moment avec vous.",
+    title: "Le plaisir de vous conseiller",
+    body: "Parce que chaque personne est différente, nous prenons le temps de vous écouter, de comprendre vos envies et de vous accompagner avec attention. Le conseil fait partie intégrante de l'expérience Honoris Cosa.",
   },
 ];
 
